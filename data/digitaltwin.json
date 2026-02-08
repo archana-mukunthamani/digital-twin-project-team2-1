@@ -1,0 +1,270 @@
+{
+  "personal_profile": {
+    "name": "Archana M",
+    "primary_roles": [
+      "Cloud Support Engineer",
+      "Aspiring Data Analyst"
+    ],
+    "career_summary": "Cloud Support Engineer with hands-on AWS RDS and CloudWatch experience, supporting enterprise customers at scale. Demonstrated ability to troubleshoot complex issues, educate non-technical stakeholders, and translate system metrics into actionable insights. Actively transitioning into Data Analytics, supported by certifications and applied metric-driven problem solving.",
+    "location_preference": ["Sydney, Australia"],
+    "current_status": "Not currently employed"
+  },
+
+  "education": [
+    {
+      "degree": "Bachelor of Information Technology",
+      "institution": "Madras University",
+      "year": 2004
+    },
+    {
+      "degree": "Post Graduate Diploma in Human Resources Management",
+      "institution": "Welingkar Institute",
+      "year": 2013
+    },
+    {
+      "degree": "Certificate IV in Accounting and Bookkeeping",
+      "institution": "Monarch Institute",
+      "year": 2021
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "CompTIA Data+",
+      "year": 2025
+    },
+    {
+      "name": "Microsoft Certified: Azure Data Fundamentals",
+      "year": 2025
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "year": 2021
+    }
+  {
+    "personal_profile": {
+      "name": "Archana M",
+      "primary_roles": [
+        "Cloud Support Engineer",
+        "Aspiring Data Analyst"
+      ],
+      "career_summary": "Cloud Support Engineer with hands-on AWS RDS and CloudWatch experience, supporting enterprise customers at scale. Demonstrated ability to troubleshoot complex issues, educate non-technical stakeholders, and translate system metrics into actionable insights. Actively transitioning into Data Analytics, supported by certifications and applied metric-driven problem solving.",
+      "location_preference": ["Sydney, Australia"],
+      "current_status": "Not currently employed"
+    },
+
+    "education": [
+      {
+        "degree": "Bachelor of Information Technology",
+        "institution": "Madras University",
+        "year": 2004
+      },
+      {
+        "degree": "Post Graduate Diploma in Human Resources Management",
+        "institution": "Welingkar Institute",
+        "year": 2013
+      },
+      {
+        "degree": "Certificate IV in Accounting and Bookkeeping",
+        "institution": "Monarch Institute",
+        "year": 2021
+      }
+    ],
+
+    "certifications": [
+      {
+        "name": "CompTIA Data+",
+        "year": 2025
+      },
+      {
+        "name": "Microsoft Certified: Azure Data Fundamentals",
+        "year": 2025
+      },
+      {
+        "name": "AWS Certified Cloud Practitioner",
+        "year": 2021
+      }
+    ],
+
+    "professional_experience": [
+      {
+        "company": "Amazon Web Services (AWS)",
+        "role": "Cloud Support Engineer",
+        "quantified_impact": [
+          "Reproduced and isolated customer-reported issues in controlled lab environments, reducing misdiagnosis risk and accelerating root cause identification.",
+          "Guided customers through CloudWatch metrics analysis (CPU, memory, IOPS, latency), improving customer self-sufficiency in performance monitoring.",
+          "Resolved RDS upgrade and configuration issues by identifying deprecated instance classes and providing CLI-based workarounds.",
+          "Handled high-severity incidents requiring frequent customer updates and internal escalations, maintaining service trust during critical outages."
+        ],
+        "metrics_examples": {
+          "customer_enablement": "Conducted multiple screen-sharing sessions to help customers understand RDS performance metrics and error causes.",
+          "troubleshooting_accuracy": "Relied on environment reproduction as a primary method to distinguish AWS service issues from customer misconfiguration.",
+          "cross_team_collaboration": "Raised internal bugs and feature requests based on repeated customer pain points."
+        }
+      },
+      {
+        "company": "IBM",
+        "role": "Technical Consultant",
+        "quantified_impact": [
+          "Delivered customer reporting solutions by converting ambiguous business requirements into technically feasible designs.",
+          "Reduced customer rework cycles by introducing prototype-based validation before full development.",
+          "Improved requirement clarity and stakeholder alignment by visually demonstrating report outputs."
+        ],
+        "metrics_examples": {
+          "requirement_validation": "Used prototype-driven discussions to gain early customer sign-off.",
+          "delivery_efficiency": "Minimized late-stage requirement changes through early visualization."
+        }
+      },
+      {
+        "company": "C3 Global Limited",
+        "role": "Technical Consultant",
+        "quantified_impact": [
+          "Provided enterprise application consulting with a focus on functional accuracy and customer satisfaction."
+        ]
+      },
+      {
+        "company": "Petrofac",
+        "role": "IT / Applications Professional",
+        "quantified_impact": [
+          "Supported enterprise application workflows and ensured operational continuity."
+        ]
+      },
+      {
+        "company": "IBM / TCS (Earlier Career)",
+        "role": "Oracle Applications / Technical Consultant",
+        "quantified_impact": [
+          "Developed and optimized SQL and PL/SQL queries, procedures, and reports for enterprise systems.",
+          "Supported technical migrations by validating data integrity and query performance."
+        ],
+        "metrics_examples": {
+          "technical_support": "Resolved customer issues related to query logic and database behavior using prior development experience."
+        }
+      }
+    ],
+
+    "skills": {
+      "cloud": [
+        "AWS RDS",
+        "AWS CloudWatch",
+        "AWS CLI",
+        "Incident escalation",
+        "Root cause analysis"
+      ],
+      "data_analytics": [
+        "Excel data cleaning",
+        "Pivot tables",
+        "Basic KPI tracking",
+        "Data validation",
+        "Introductory Power BI dashboards"
+      ],
+      "databases": [
+        "SQL",
+        "PL/SQL",
+        "Oracle Applications",
+        "RDS performance metrics"
+      ],
+      "soft_skills": [
+        "Customer education",
+        "Stakeholder communication",
+        "Analytical thinking",
+        "Ownership mindset"
+      ]
+    },
+
+    "interview_prep": {
+      "behavioral": [
+        {
+          "question": "How do you differentiate between customer misconfiguration and an AWS service issue?",
+          "answer_star": {
+            "situation": "Customers often reported errors without clarity on root cause.",
+            "task": "Determine whether the issue originated from AWS services or customer configuration.",
+            "action": [
+              "Reproduced the issue in a lab environment",
+              "Matched customer configuration as closely as possible",
+              "Validated behavior against expected service outcomes"
+            ],
+            "result": "Accurate root cause identification and confident escalation or resolution guidance."
+          }
+        },
+        {
+          "question": "Describe a time you enabled a non-technical customer.",
+          "answer_star": {
+            "situation": "Customers lacked visibility into database performance and error causes.",
+            "task": "Enable customers to independently monitor and understand RDS health.",
+            "action": [
+              "Used screen sharing to navigate CloudWatch dashboards",
+              "Explained instance class limits and read/write capacity",
+              "Shared step-by-step documentation and internal knowledge articles"
+            ],
+            "result": "Customers gained confidence in interpreting metrics and reduced repeat support queries."
+          }
+        },
+        {
+          "question": "Tell me about a time you went beyond your role.",
+          "answer_star": {
+            "situation": "AWS support scope excludes coding assistance.",
+            "task": "Unblock customers without violating role boundaries.",
+            "action": [
+              "Used prior SQL and PL/SQL experience",
+              "Guided customers through query logic rather than writing full solutions",
+              "Explained best practices conceptually"
+            ],
+            "result": "Customers resolved blockers while support boundaries were maintained."
+          }
+        },
+        {
+          "question": "Describe a time you handled a high-severity incident.",
+          "answer_star": {
+            "situation": "A critical production outage impacted multiple customers and degraded service availability.",
+            "task": "Coordinate an immediate response to restore service and communicate clearly with stakeholders.",
+            "action": [
+              "Assembled a cross-functional incident response team and established a war room",
+              "Reproduced the issue in a controlled environment to isolate the fault",
+              "Implemented a rollback and temporary mitigations while engineering developed a permanent fix",
+              "Provided regular, transparent updates to affected customers and internal stakeholders"
+            ],
+            "result": "Service was restored within the SLA window, customer impact was minimized, and post-incident actions reduced recurrence risk."
+          }
+        },
+        {
+          "question": "Give an example of influencing product improvements from customer feedback.",
+          "answer_star": {
+            "situation": "Multiple customers reported recurring pain points caused by a missing platform feature.",
+            "task": "Collect evidence and advocate for a product change to address the root cause.",
+            "action": [
+              "Collated customer cases and reproducible steps to demonstrate the issue",
+              "Filed a detailed internal bug/feature request with impact analysis",
+              "Collaborated with product and engineering teams to prioritize and scope a fix",
+              "Worked with documentation to ensure customers received guidance during rollout"
+            ],
+            "result": "The feature was implemented in a subsequent release, lowering support ticket volume and improving customer satisfaction."
+          }
+        }
+      ],
+
+      "technical": [
+        {
+          "question": "How does your cloud experience support your transition into data analytics?",
+          "answer": {
+            "points": [
+              "Daily interpretation of CloudWatch metrics and trends",
+              "Correlation of performance data to customer impact",
+              "Experience explaining numerical insights to non-technical stakeholders",
+              "Hands-on data cleaning and visualization during certification projects"
+            ]
+          }
+        }
+      ]
+    },
+
+    "career_transition": {
+      "from": "Cloud Support Engineer",
+      "to": "Data Analyst",
+      "evidence": [
+        "Metric-driven troubleshooting experience",
+        "Hands-on data cleaning and visualization",
+        "Formal analytics certifications",
+        "Strong numerical reasoning and pattern recognition"
+      ]
+    }
+  }
