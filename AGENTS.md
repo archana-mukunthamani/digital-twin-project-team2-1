@@ -1,177 +1,197 @@
-#  AGENTS.md file
-# Agent Instructions
+# AGENTS.md
 
-This file defines how AI agents should operate within the **digital-twin-project-team2** repository.
+## Agent Instructions
 
----
-
-
-
-## Core Rules
-
-* Do not modify files unless explicitly instructed
-* Prefer documentation, clarity, and correctness over speed
-* Make small, well-scoped changes** only
-* Follow existing repository structure and naming conventions
-* Do not introduce new tools, libraries, or frameworks without team approval
+This file defines how AI agents (including GitHub Copilot) should operate within the **digital-twin-project-team2** repository. It is the authoritative source of project context, constraints, and expectations.
 
 ---
 
-## Repository Scope (Current Phase)
+## 1. Project Overview
+
+**Project Name:** Digital Twin MCP Server
+
+**Goal:**
+Build an **MCP server** (using the *roll dice* pattern) that acts as a **digital twin assistant**, capable of answering questions about a person’s professional profile using **Retrieval-Augmented Generation (RAG)**.
+
+The system retrieves relevant profile data from a vector database and uses an LLM to generate grounded, context-aware responses.
+
+---
+
+## 2. Reference Repositories (DO NOT CHANGE WITHOUT INSTRUCTION)
+
+These repositories define the required architecture and logic patterns.
+
+* **MCP Pattern Reference (Roll Dice):**
+  [https://github.com/gocallum/rolldice-mcpserver.git](https://github.com/gocallum/rolldice-mcpserver.git)
+
+* **RAG Logic Reference (Python):**
+  [https://github.com/gocallum/binal_digital-twin_py.git](https://github.com/gocallum/binal_digital-twin_py.git)
+
+Agents must:
+
+* Follow the *roll dice MCP server pattern* exactly
+* Ensure RAG search logic matches the Python reference implementation
+
+---
+
+## 3. Core Rules
+
+Agents must:
+
+* ❌ Not modify files unless explicitly instructed
+* ✅ Prefer documentation, clarity, and correctness over speed
+* ✅ Make small, well-scoped changes only
+* ✅ Follow existing repository structure and naming conventions
+* ❌ Not introduce new tools, libraries, or frameworks without team approval
+
+---
+
+## 4. Repository Scope (Current Phase)
+
+### In Scope
 
 Agents should focus on:
 
 * Planning and design documentation
-* Clear explanation of system architecture and workflow
-* Conceptual design of RAG pipelines and AI agents
-* Readable Markdown documentation
+* Clear explanations of system architecture and workflow
+* Conceptual design of RAG pipelines and MCP agents
+* Readable, student-friendly Markdown documentation
+
+### Out of Scope (Unless Explicitly Requested)
 
 Agents should not:
 
-* Implement full production code unless requested
+* Implement full production code
 * Add unnecessary boilerplate or premature optimisation
 * Refactor unrelated content
-
----
-
-## Coding & Design Guidelines (When Code Is Added)
-
-* Keep code modular and easy to understand
-* Prefer explicit logic over complex abstractions
-* Use meaningful variable and function names
-* Comment code to explain why, not just what
-
----
-
-## AI & RAG Design Expectations
-
-When discussing or designing AI components:
-
-* Clearly separate:
-
-  * Data storage (e.g. digitaltwin.json)
-  * Retrieval (semantic/vector search)
-  * Generation (LLM responses)
-* Explain assumptions and limitations
-* Avoid making claims of guaranteed accuracy
-* Treat generated responses as assistive, not authoritative
-
----
-
-## Security & Ethics
-
-* Assume professional profile data may be sensitive
-* Do not include real personal data in examples
-* Avoid hard-coded secrets or credentials
-* Follow basic ethical AI principles (transparency, user control, bias awareness)
-
----
-
-## Collaboration & Version Control
-
-* Respect team-based workflows (commits, pull requests, reviews)
-* Do not rewrite history or squash commits unless instructed
-* Keep commit messages clear and descriptive
-
----
-
-## Documentation Standards
-
-* Use clear headings and structured Markdown
-* Keep explanations concise and student-friendly
-* Update documentation when behaviour or design changes
-
----
-
-## Read-Only / Caution Files
-
-Unless explicitly instructed, treat the following as read-only:
-
-* README.md (major changes require team agreement)
-* Any agreed planning or assessment documents
-
----
-
-## Out of Scope
-
-Agents should not:
-
 * Make architectural decisions without team context
-* Add assessment-specific content without alignment to project requirements
-* Introduce production-level security or scaling assumptions
 
 ---
 
-**Guiding Principle:**
+## 5. MCP & RAG Architecture Expectations
 
-> Support the team by improving clarity, learning outcomes, and design quality while respecting collaborative project workflows.
+When designing or explaining AI components, agents must clearly separate:
 
+1. **Data Storage**
 
-# Digital Twin MCP Server Project Instructions
+   * Professional profile data (e.g. `digitaltwin_clean.json` or equivalent)
 
-## Project Overview
-Build an MCP server using the roll dice pattern to create a digital twin assistant that can answer questions about a person's professional profile using RAG (Retrieval-Augmented Generation).
+2. **Retrieval**
 
-## Reference Repositories
-- **Pattern Reference**: https://github.com/gocallum/rolldice-mcpserver.git
-  - Roll dice MCP server - use same technology and pattern for our MCP server
-- **Logic Reference**: https://github.com/gocallum/binal_digital-twin_py.git
-  - Python code using Upstash Vector for RAG search with Groq and LLaMA for generations
+   * Semantic / vector search using **Upstash Vector**
 
-## Core Functionality
-- MCP server accepts user questions about the person's professional background
-- Create server actions that search Upstash Vector database and return RAG results
-- Search logic must match the Python version exactly
+3. **Generation**
 
-## Environment Variables (.env.local)
-```
+   * LLM-based response generation using retrieved context
+
+Additional constraints:
+
+* Do not claim guaranteed accuracy
+* Treat LLM output as assistive, not authoritative
+* Explicitly explain assumptions and limitations
+
+---
+
+## 6. Environment Variables (Must Match `.env.local`)
+
+Agents must not invent or rename environment variables.
+
+```env
 UPSTASH_VECTOR_REST_URL=
 UPSTASH_VECTOR_REST_TOKEN=
 GROQ_API_KEY=
 ```
 
-## Technical Requirements
-- **Framework**: Next.js 15.5.3+ (use latest available)
-- **Package Manager**: Always use pnpm (never npm or yarn)
-- **Commands**: Always use Windows PowerShell commands
-- **Type Safety**: Enforce strong TypeScript type safety throughout
-- **Architecture**: Always use server actions where possible
-- **Styling**: Use globals.css instead of inline styling
-- **UI Framework**: ShadCN with dark mode theme
-- **Focus**: Prioritize MCP functionality over UI - UI is primarily for MCP server configuration
+If functionality requires additional variables, this must be discussed first.
 
-## Setup Commands
-```bash
-pnpm dlx shadcn@latest init
-```
-Reference: https://ui.shadcn.com/docs/installation/next
+---
 
-## Upstash Vector Integration
+## 7. Technical Requirements
 
-### Key Documentation
-- Getting Started: https://upstash.com/docs/vector/overall/getstarted
-- Embedding Models: https://upstash.com/docs/vector/features/embeddingmodels
-- TypeScript SDK: https://upstash.com/docs/vector/sdks/ts/getting-started
+Agents must respect the following technical constraints:
 
-### Example Implementation
-```typescript
-import { Index } from "@upstash/vector"
+* **Framework:** Next.js 15.5.3+ (latest available)
+* **Language:** TypeScript (strict typing enforced)
+* **Architecture:** Prefer **server actions** wherever possible
+* **Package Manager:** pnpm only (never npm or yarn)
+* **Commands:** Windows PowerShell syntax only
+* **Styling:** `globals.css` (no inline styles)
+* **UI Framework:** ShadCN UI with dark mode
 
-const index = new Index({
-  url: process.env.UPSTASH_VECTOR_REST_URL!,
-  token: process.env.UPSTASH_VECTOR_REST_TOKEN!,
-})
+UI is secondary. **MCP server functionality is the priority.**
 
-// RAG search example
-await index.query({
-  data: "What is Upstash?",
-  topK: 3,
-  includeMetadata: true,
-})
-```
+---
 
-## Additional Useful Resources
-- Add any other relevant documentation links as needed
-- Include specific API references for integrations
-- Reference MCP protocol specifications
-- Add deployment and testing guidelines
+## 8. Upstash Vector Integration
+
+### Official Documentation
+
+* Getting Started: [https://upstash.com/docs/vector/overall/getstarted](https://upstash.com/docs/vector/overall/getstarted)
+* Embedding Models: [https://upstash.com/docs/vector/features/embeddingmodels](https://upstash.com/docs/vector/features/embeddingmodels)
+* TypeScript SDK: [https://upstash.com/docs/vector/sdks/ts/getting-started](https://upstash.com/docs/vector/sdks/ts/getting-started)
+
+### Required Usage Pattern
+
+* Use the official Upstash Vector TypeScript SDK
+* Include metadata in query results
+* Ensure search behaviour matches the Python reference implementation exactly
+
+---
+
+## 9. Coding & Design Guidelines (When Code Is Added)
+
+When code is explicitly requested:
+
+* Keep code modular and readable
+* Prefer explicit logic over complex abstractions
+* Use meaningful variable and function names
+* Comment code to explain *why*, not just *what*
+* Enforce strong TypeScript typing throughout
+
+---
+
+## 10. Security & Ethics
+
+Agents must:
+
+* Assume professional profile data may be sensitive
+* Avoid real personal data in examples
+* Never hard-code secrets or credentials
+* Follow ethical AI principles:
+
+  * Transparency
+  * User control
+  * Bias awareness
+
+---
+
+## 11. Collaboration & Version Control
+
+Agents must respect team workflows:
+
+* Use clear, descriptive commit messages
+* Do not rewrite history or squash commits unless instructed
+* Assume pull requests and reviews are required
+
+---
+
+## 12. Documentation Standards
+
+* Use structured Markdown with clear headings
+* Keep explanations concise and student-friendly
+* Update documentation when behaviour or design changes
+
+---
+
+## 13. Read-Only / Caution Files
+
+Unless explicitly instructed, treat the following as read-only:
+
+* `README.md` (major changes require team agreement)
+* Agreed planning or assessment documents
+
+---
+
+## Guiding Principle
+
+> Support the team by improving clarity, learning outcomes, and design quality while respecting collaborative project workflows.

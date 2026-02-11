@@ -14,7 +14,7 @@ from upstash_vector import Index
 from groq import Groq
 
 # Load environment variables
-load_dotenv()
+load_dotenv(dotenv_path='.env.local')
 
 # Configuration
 UPSTASH_VECTOR_REST_URL = os.getenv('test_UPSTASH_VECTOR_REST_URL') or os.getenv('UPSTASH_VECTOR_REST_URL')
