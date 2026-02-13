@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "name": "Comprehensive Interview Template",
+  "description": "Standard interview template for conducting comprehensive job interviews",
+  "critical_rules": [
+    "RULE 1: ONLY use data from query_digital_twin and query_job_postings tools",
+    "RULE 2: NEVER hallucinate or make up skills, experience, or education",
+    "RULE 3: If a specific skill or experience is NOT in the digital twin profile, you MUST honestly state: 'I don't have experience with [topic]'",
+    "RULE 4: Answer ONLY based on actual profile data retrieved from the database",
+    "RULE 5: Be honest about gaps - this is for accurate assessment, not marketing"
+  ]
+}

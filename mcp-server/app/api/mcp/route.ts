@@ -6,8 +6,14 @@ import {
   querySkills,
   queryProjects,
   queryEducation,
-  queryCareerGoals
+  queryCareerGoals,
+  enrichInterviewCommand
 } from "@/app/actions/mcp-actions"
+import {
+  queryJobPostings,
+  getJobPosting,
+  listJobPostings
+} from "@/app/actions/job-posting-actions"
 
 export async function POST(request: NextRequest) {
   try {
@@ -98,6 +104,65 @@ export async function POST(request: NextRequest) {
                   properties: {},
                   required: []
                 }
+              },
+              {
+                name: 'query_job_postings',
+                description: 'Search for job postings matching keywords, location, or other criteria',
+                inputSchema: {
+                  type: 'object',
+                  properties: {
+                    query: {
+                      type: 'string',
+                      description: 'Search query for job postings (e.g., location, job title, skills required)'
+                    }
+                  },
+                  required: ['query']
+                }
+              },
+              {
+                name: 'get_job_posting',
+                description: 'Get full details of a specific job posting by ID',
+                inputSchema: {
+                  type: 'object',
+                  properties: {
+                    jobId: {
+                      type: 'string',
+                      description: 'The job posting ID (e.g., job_job1)'
+                    }
+                  },
+                  required: ['jobId']
+                }
+              },
+              {
+                name: 'list_job_postings',
+                description: 'List all available job postings in the database',
+                inputSchema: {
+                  type: 'object',
+                  properties: {},
+                  required: []
+                }
+              },
+              {
+                name: 'conduct_interview',
+                description: 'Conduct a comprehensive interview for a specific job position. Returns enriched interview instructions with template.',
+                inputSchema: {
+                  type: 'object',
+                  properties: {
+                    jobTitle: {
+                      type: 'string',
+                      description: 'Job title (e.g., Data Analyst, Software Engineer)'
+                    },
+                    company: {
+                      type: 'string',
+                      description: 'Company name (e.g., Google, Microsoft)'
+                    },
+                    location: {
+                      type: 'string',
+                      description: 'Location (optional, e.g., Sydney, San Francisco)'
+                    }
+                  },
+                  required: ['jobTitle', 'company']
+                }
               }
             ]
           }
@@ -123,6 +188,18 @@ export async function POST(request: NextRequest) {
             result = await queryEducation()
           } else if (name === 'get_career_goals') {
             result = await queryCareerGoals()
+          } else if (name === 'query_job_postings') {
+            result = await queryJobPostings(args?.query || 'data analyst')
+          } else if (name === 'get_job_posting') {
+            result = await getJobPosting(args?.jobId || 'job_job1')
+          } else if (name === 'list_job_postings') {
+            result = await listJobPostings()
+          } else if (name === 'conduct_interview') {
+            result = await enrichInterviewCommand(
+              args?.jobTitle || 'Data Analyst',
+              args?.company || 'Unknown Company',
+              args?.location || ''
+            )
           } else {
             return NextResponse.json({
               jsonrpc: '2.0',
@@ -136,6 +213,23 @@ export async function POST(request: NextRequest) {
 
           // Handle the result
           if (result.success) {
+            // For conduct_interview, return the enriched instructions directly
+            if (name === 'conduct_interview') {
+              const instructions = result.result?.instructions || 'No instructions generated'
+              return NextResponse.json({
+                jsonrpc: '2.0',
+                id: body.id,
+                result: {
+                  content: [
+                    {
+                      type: 'text',
+                      text: instructions
+                    }
+                  ]
+                }
+              })
+            }
+            
             return NextResponse.json({
               jsonrpc: '2.0',
               id: body.id,
@@ -203,8 +297,19 @@ export async function GET(request: NextRequest) {
     message: 'Digital Twin MCP Server',
     version: '1.0.0',
     status: 'running',
-    tools: ['query_digital_twin', 'get_experience', 'get_skills', 'get_projects', 'get_education', 'get_career_goals'],
-    info: 'RAG-powered MCP server for professional profile queries'
+    tools: [
+      'query_digital_twin',
+      'get_experience',
+      'get_skills',
+      'get_projects',
+      'get_education',
+      'get_career_goals',
+      'query_job_postings',
+      'get_job_posting',
+      'list_job_postings',
+      'conduct_interview'
+    ],
+    info: 'RAG-powered MCP server for professional profile and job posting queries'
   })
 }
 

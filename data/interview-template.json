@@ -1,0 +1,150 @@
+{
+  "version": "1.0",
+  "name": "Comprehensive Interview Template",
+  "description": "Standard interview template for conducting comprehensive job interviews",
+  "critical_rules": [
+    "RULE 1: ONLY use data from query_digital_twin and query_job_postings tools",
+    "RULE 2: NEVER hallucinate or make up skills, experience, or education",
+    "RULE 3: If a specific skill or experience is NOT in the digital twin profile, you MUST honestly state: 'I don't have experience with [topic]'",
+    "RULE 4: Answer ONLY based on actual profile data retrieved from the database",
+    "RULE 5: Be honest about gaps - this is for accurate assessment, not marketing"
+  ],
+  "interview_structure": {
+    "step_1": {
+      "name": "Query Job Posting",
+      "action": "Call tool: query_job_postings",
+      "query": "[JOB_TITLE] [COMPANY] [LOCATION]",
+      "note": "Replace brackets with actual values"
+    },
+    "step_2": {
+      "name": "Query Candidate Profile",
+      "action": "Call tool: query_digital_twin",
+      "question": "What is my complete professional background, experience, skills, certifications, and accomplishments?",
+      "critical": "This is the ONLY data source for candidate answers. Do not add anything beyond what's returned."
+    },
+    "step_3": {
+      "name": "Conduct Interview - 8 Questions",
+      "sections": [
+        {
+          "section": "QUESTION 1: INTRODUCTION (2 min)",
+          "instructions": [
+            "Act as hiring manager: Ask for brief professional background (30 seconds)",
+            "Act as candidate: Answer using ONLY data from digital twin profile",
+            "Act as hiring manager: Ask how their experience aligns with the role (30 seconds)",
+            "Act as candidate: Answer honestly based on profile data"
+          ]
+        },
+        {
+          "section": "QUESTIONS 2-4: TECHNICAL SKILLS (10 min)",
+          "instructions": [
+            "Act as hiring manager: Ask 3 specific technical questions based on job posting requirements",
+            "Each question should assess: depth of knowledge, hands-on experience, problem-solving ability",
+            "Act as candidate: Answer using ONLY technical skills from digital twin profile",
+            "If candidate doesn't have experience in a technical area: Honestly state 'I don't have experience with [technology]'",
+            "Get detailed examples from their project work (only if in profile)"
+          ]
+        },
+        {
+          "section": "QUESTIONS 5-7: BEHAVIORAL SKILLS (8 min)",
+          "instructions": [
+            "Act as hiring manager: Ask 3 behavioral questions covering: ownership, communication, adaptability",
+            "Act as candidate: Answer using ONLY behavioral examples from digital twin profile",
+            "If candidate doesn't have an example: Honestly state 'I don't have a specific example of [behavior]'",
+            "Get specific examples of: handling challenges, working with teams, learning quickly"
+          ]
+        },
+        {
+          "section": "QUESTION 8: SKILL-FOCUSED ASSESSMENT (4 min)",
+          "instructions": [
+            "Act as hiring manager: Ask one deep-dive question on the most critical skill for this role",
+            "Act as candidate: Answer using ONLY expertise data from digital twin profile",
+            "Assess their expertise level and readiness for immediate impact",
+            "If they don't have this critical skill: Honestly state 'I have limited experience with [skill] but am eager to learn'"
+          ]
+        }
+      ]
+    },
+    "step_4": {
+      "name": "Score Competencies",
+      "instructions": "For each competency area below, provide score 0-100 with SPECIFIC EVIDENCE from interview answers",
+      "competencies": [
+        {
+          "name": "Technical Proficiency",
+          "basis": "Based on answers to technical questions (Questions 2-4)",
+          "evidence_requirement": "Quote specific skills mentioned from profile"
+        },
+        {
+          "name": "Problem-Solving Ability",
+          "basis": "Based on how they explain technical approaches and examples",
+          "evidence_requirement": "Reference specific projects or methodologies mentioned"
+        },
+        {
+          "name": "Communication Skills",
+          "basis": "Based on clarity of explanations and how they articulate concepts",
+          "evidence_requirement": "Note specific phrases or examples that demonstrate communication"
+        },
+        {
+          "name": "Ownership & Initiative",
+          "basis": "Based on behavioral question answers (Questions 5-7)",
+          "evidence_requirement": "Reference specific behavioral examples from profile"
+        },
+        {
+          "name": "Cultural Fit",
+          "basis": "Based on values alignment with company and adaptability to role",
+          "evidence_requirement": "Connect profile values/achievements to job posting requirements"
+        }
+      ],
+      "scoring_rules": [
+        "Each score is 0-100",
+        "CRITICAL: Only score based on data revealed in the interview",
+        "If data is missing/not available, score accordingly low",
+        "Show individual competency scores",
+        "Calculate and show overall average score"
+      ]
+    },
+    "step_5": {
+      "name": "Final Assessment",
+      "format": "Provide on one-page summary:",
+      "sections": [
+        {
+          "section": "HIRING RECOMMENDATION",
+          "options": "Choose ONE: HIRE / CONDITIONAL OFFER / DO NOT HIRE",
+          "basis": "Based on overall fit and competency scores"
+        },
+        {
+          "section": "PASS/FAIL",
+          "criteria": "PASS: Score 75+ and meets core requirements | FAIL: Score <75 or missing critical skills",
+          "important": "Be honest - use actual scores, not inflated assessments"
+        },
+        {
+          "section": "SUMMARY",
+          "content": [
+            "Overall fit assessment (1-2 sentences based on interview)",
+            "Top 3 strengths with specific evidence from answers",
+            "Top 3 gaps or concerns with specific evidence",
+            "If CONDITIONAL OFFER: Specific areas for development in first 3 months",
+            "If DO NOT HIRE: Specific reasons why not a good fit"
+          ]
+        },
+        {
+          "section": "FINAL SCORE",
+          "format": "[X]/100",
+          "note": "This is the average of all 5 competency scores"
+        }
+      ]
+    }
+  },
+  "usage_instructions": {
+    "for_user": "Simple command: 'Conduct a comprehensive interview for the [JOB_TITLE] position at [COMPANY], [LOCATION]'",
+    "for_mcp": "MCP server receives simple command, enriches with this template, and provides to Claude with full instructions"
+  },
+  "anti_hallucination_checklist": [
+    "✓ All candidate answers based on query_digital_twin results",
+    "✓ No made-up skills or experience",
+    "✓ No invented project examples",
+    "✓ Honest about missing experience areas",
+    "✓ Scores only reflect data in profile",
+    "✓ Recommendation backed by actual evidence",
+    "✓ No optimistic bias - real assessment"
+  ]
+}

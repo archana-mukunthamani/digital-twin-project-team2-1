@@ -1,13 +1,22 @@
 {
   "personal_profile": {
     "name": "Archana M",
+    "total_it_experience": "8+ years (since Dec 2004)",
     "primary_roles": [
-      "Cloud Support Engineer",
-      "Aspiring Data Analyst"
+      "Cloud Support Engineer (AWS)",
+      "Oracle Application Consultant",
+      "Data-Focused IT Professional"
     ],
-    "career_summary": "Cloud Support Engineer with hands-on AWS RDS and CloudWatch experience, supporting enterprise customers at scale. Demonstrated ability to troubleshoot complex issues, educate non-technical stakeholders, and translate system metrics into actionable insights. Actively transitioning into Data Analytics, supported by certifications and applied metric-driven problem solving.",
+    "career_summary": "Data-focused IT professional with 8+ years of experience across enterprise applications, cloud database support, and analytics-driven roles. Strong background in SQL, Oracle and PostgreSQL databases, data migration, reporting, and stakeholder engagement. Hands-on experience supporting AWS RDS and Aurora environments, resolving data quality and performance issues, and translating business requirements into technical solutions. Recent self-learning in data analytics with 8-9 months of intensive project work including AI-powered data pipelines and digital twin development. Certified in CompTIA Data+ and Microsoft Azure Data Fundamentals.",
     "location_preference": ["Sydney, Australia"],
-    "current_status": "Not currently employed"
+    "current_status": "Currently unemployed - Actively seeking opportunities",
+    "job_target": "Data Analyst / Support Engineer / ERP Consultant",
+    "job_fit": {
+      "location": "Currently based in Sydney - available for hybrid/on-site roles",
+      "salary_expectation": "$80,000-$95,000 AUD",
+      "notice_period": "Immediately available",
+      "visa_status": "Australian resident"
+    }
   },
 
   "education": [
@@ -46,60 +55,173 @@
   "professional_experience": [
     {
       "company": "Amazon Web Services (AWS)",
-      "role": "Cloud Support Engineer",
+      "location": "Sydney, Australia",
+      "role": "Cloud Support Engineer (Oracle, PostgreSQL)",
+      "duration": "Aug 2022 – Mar 2025",
+      "years": 2.7,
       "quantified_impact": [
-        "Reproduced and isolated customer-reported issues in controlled lab environments, reducing misdiagnosis risk and accelerating root cause identification.",
-        "Guided customers through CloudWatch metrics analysis (CPU, memory, IOPS, latency), improving customer self-sufficiency in performance monitoring.",
-        "Resolved RDS upgrade and configuration issues by identifying deprecated instance classes and providing CLI-based workarounds.",
-        "Handled high-severity incidents requiring frequent customer updates and internal escalations, maintaining service trust during critical outages."
+        "Supported enterprise customers at scale with 500+ customer issues resolved and 85% first-call-resolution rate",
+        "Specialized in AWS RDS (Oracle and PostgreSQL) and Aurora database support for production environments",
+        "Resolved RDS upgrade, configuration, and performance issues by identifying deprecated instance classes and providing CLI-based workarounds",
+        "Guided customers through CloudWatch metrics analysis (CPU, memory, IOPS, latency), improving customer self-sufficiency in performance monitoring",
+        "Reproduced and isolated customer-reported issues in controlled lab environments, reducing misdiagnosis risk and accelerating root cause identification",
+        "Handled high-severity incidents requiring frequent customer updates and internal escalations, maintaining service trust during critical outages",
+        "Conducted multiple screen-sharing sessions to help customers understand RDS performance metrics and error causes"
       ],
-      "metrics_examples": {
-        "customer_enablement": "Conducted multiple screen-sharing sessions to help customers understand RDS performance metrics and error causes.",
-        "troubleshooting_accuracy": "Relied on environment reproduction as a primary method to distinguish AWS service issues from customer misconfiguration.",
-        "cross_team_collaboration": "Raised internal bugs and feature requests based on repeated customer pain points."
+      "key_achievements": {
+        "database_expertise": "Deep knowledge of Oracle and PostgreSQL database administration, troubleshooting, and performance optimization on AWS",
+        "customer_success": "85% first-call-resolution rate through methodical troubleshooting and clear communication",
+        "cross_team_collaboration": "Raised internal bugs and feature requests based on repeated customer pain points, influencing product improvements"
       }
     },
     {
-      "company": "IBM",
-      "role": "Technical Consultant",
+      "company": "Seertree Global Services",
+      "location": "Chennai, India",
+      "role": "Oracle Application Consultant – Technical",
+      "duration": "Dec 2014 – Mar 2015",
+      "years": 0.25,
       "quantified_impact": [
-        "Delivered customer reporting solutions by converting ambiguous business requirements into technically feasible designs.",
-        "Reduced customer rework cycles by introducing prototype-based validation before full development.",
-        "Improved requirement clarity and stakeholder alignment by visually demonstrating report outputs."
-      ],
-      "metrics_examples": {
-        "requirement_validation": "Used prototype-driven discussions to gain early customer sign-off.",
-        "delivery_efficiency": "Minimized late-stage requirement changes through early visualization."
-      }
-    },
-    {
-      "company": "C3 Global Limited",
-      "role": "Technical Consultant",
-      "quantified_impact": [
-        "Provided enterprise application consulting with a focus on functional accuracy and customer satisfaction."
+        "Delivered customer reporting solutions by converting ambiguous business requirements into technically feasible designs",
+        "Managed Oracle E-Business Suite (HRMS, Payroll, Finance, SCM) technical implementations and configurations"
       ]
     },
     {
-      "company": "Petrofac",
-      "role": "IT / Applications Professional",
+      "company": "Radiare Software Solutions Ltd",
+      "location": "Chennai, India",
+      "role": "Associate Consultant",
+      "duration": "Mar 2014 – Dec 2014",
+      "years": 0.75,
       "quantified_impact": [
-        "Supported enterprise application workflows and ensured operational continuity."
+        "Provided functional and technical consulting on enterprise applications"
       ]
     },
     {
-      "company": "IBM / TCS (Earlier Career)",
-      "role": "Oracle Applications / Technical Consultant",
+      "company": "IBM India Pvt Ltd",
+      "location": "Bangalore, India",
+      "role": "Application Programmer Consultant",
+      "duration": "Nov 2007 – Jan 2009",
+      "years": 1.25,
       "quantified_impact": [
-        "Developed and optimized SQL and PL/SQL queries, procedures, and reports for enterprise systems.",
-        "Supported technical migrations by validating data integrity and query performance."
+        "Developed and optimized SQL and PL/SQL queries, procedures, and reports for enterprise systems",
+        "Supported technical implementations and ensured operational continuity",
+        "Understood business requirements and translated them into data-driven solutions"
       ],
       "metrics_examples": {
-        "technical_support": "Resolved customer issues related to query logic and database behavior using prior development experience."
+        "technical_support": "Resolved customer issues related to query logic and database behavior using SQL expertise"
       }
+    },
+    {
+      "company": "Tata Consultancy Services Pvt Ltd",
+      "location": "Mumbai, India",
+      "role": "Assistant System Engineer",
+      "duration": "Dec 2004 – Nov 2007",
+      "years": 3,
+      "quantified_impact": [
+        "Started career in enterprise application support and database administration",
+        "Supported Oracle Applications implementation and customization",
+        "Gained foundational experience in troubleshooting and customer engagement"
+      ]
+    }
+  ],
+
+  "career_breaks": [
+    {
+      "period": "2009 – 2014",
+      "duration": "5 years",
+      "reason": "Family care responsibilities"
+    },
+    {
+      "period": "2015 – 2021",
+      "duration": "6 years",
+      "reason": "Family care responsibilities"
+    }
+  ],
+
+  "volunteer_experience": [
+    {
+      "organization": "Family Business",
+      "role": "IT & Administrative Support",
+      "responsibilities": [
+        "Basic website management and maintenance",
+        "IT infrastructure support",
+        "Administrative coordination"
+      ]
+    }
+  ],
+
+  "recent_learning_projects": [
+    {
+      "project_name": "AI-Powered Food Knowledge Assistant (Food RAG)",
+      "period": "Dec 2025 – Jan 2026",
+      "description": "Built a data retrieval and analysis pipeline to generate structured insights from curated datasets",
+      "key_accomplishments": [
+        "Designed and implemented data retrieval and analysis pipeline for knowledge extraction",
+        "Implemented data validation and context-aware retrieval to improve result accuracy and relevance",
+        "Deployed lightweight web interface to support interactive exploration of data-driven outputs",
+        "Applied RAG (Retrieval-Augmented Generation) principles to ensure accuracy and relevance of generated insights",
+        "Demonstrated ability to work with modern AI/ML architectures and data engineering practices"
+      ],
+      "skills_demonstrated": ["Data pipeline development", "Data validation", "Web interface design", "RAG implementation", "Python scripting"]
+    },
+    {
+      "project_name": "Building My Digital Twin (Self-Learning Project)",
+      "period": "Jan 2026 – Feb 2026",
+      "description": "Comprehensive professional profile development with RAG-powered MCP server for interview preparation and career assessment",
+      "key_accomplishments": [
+        "Designed and implemented a digital twin system to capture comprehensive professional profile",
+        "Built RAG-powered interview simulation system using MCP (Model Context Protocol)",
+        "Integrated vector database (Upstash) for semantic search of professional capabilities",
+        "Created structured interview framework that generates role-specific assessments",
+        "Implemented competency scoring system based on actual profile data",
+        "Tested across multiple job roles and documented assessment results",
+        "Demonstrated proficiency in full-stack development including backend architecture, vector databases, and LLM integration"
+      ],
+      "technical_stack": ["Next.js 15.5", "TypeScript", "Upstash Vector DB", "MCP Protocol", "Groq API", "Python"],
+      "skills_demonstrated": ["System design", "Full-stack development", "Vector database integration", "RAG implementation", "LLM orchestration", "Documentation"]
     }
   ],
 
   "skills": {
+    "power_bi": {
+      "proficiency": "Intermediate-Advanced (1 year hands-on)",
+      "dashboards_built": "4-6 production dashboards",
+      "key_capabilities": [
+        "Data modeling with relationships",
+        "DAX calculated measures and metrics",
+        "Scheduled daily refreshes from multiple sources",
+        "Power Query for data transformation",
+        "Trend analysis and month-over-month comparisons"
+      ],
+      "example": "Analytics dashboard tracking product purchases, category distribution, sales trends, revenue by segment with scheduled daily refresh from CSV/SQL sources"
+    },
+    "excel": {
+      "proficiency": "Advanced",
+      "key_skills": [
+        "PivotTables for summarization",
+        "Power Query for ETL and transformation",
+        "Advanced formulas (INDEX/MATCH, nested IFs)",
+        "Data validation and structured reporting",
+        "Multi-sheet analytical workbooks"
+      ]
+    },
+    "databases": [
+      "SQL - data analysis and reporting",
+      "SQL Server - working knowledge",
+      "Oracle Applications - 5+ years scheduled report development",
+      "PL/SQL - query development"
+    ],
+    "office_tools": {
+      "power_query": "Advanced",
+      "vba": "Basic exposure",
+      "access": "Basic familiarity"
+    },
+    "data_quality": [
+      "Data cleaning and validation",
+      "Source-to-report reconciliation",
+      "Anomaly detection and duplicate identification",
+      "Metric standardization and documentation",
+      "Data governance and accuracy ownership"
+    ],
     "cloud": [
       "AWS RDS",
       "AWS CloudWatch",
@@ -107,25 +229,114 @@
       "Incident escalation",
       "Root cause analysis"
     ],
-    "data_analytics": [
-      "Excel data cleaning",
-      "Pivot tables",
-      "Basic KPI tracking",
-      "Data validation",
-      "Introductory Power BI dashboards"
+    "programming_and_scripting": {
+      "python": {
+        "proficiency": "Intermediate",
+        "experience_areas": [
+          "Data retrieval and analysis pipelines",
+          "Data validation and transformation",
+          "Web framework integration (API usage)",
+          "RAG (Retrieval-Augmented Generation) system development",
+          "Working with modern AI/ML libraries and tools",
+          "Web scraping and structured data extraction"
+        ],
+        "projects": [
+          "Food RAG (AI-powered food knowledge assistant)",
+          "Digital Twin MCP Server (vector database integration, semantic search)",
+          "Data processing scripts for vector embedding"
+        ],
+        "note": "Self-taught through recent projects. Practical proficiency in application development and scripting."
+      },
+      "shell_scripting": {
+        "proficiency": "Intermediate",
+        "experience_areas": [
+          "AWS CLI automation and infrastructure scripting",
+          "System operations and maintenance tasks",
+          "Pipeline automation and data processing workflows",
+          "Environment configuration and deployment scripts"
+        ]
+      }
+    },
+    "development_tools": [
+      "GitHub - version control, collaborative development",
+      "VS Code - primary development environment",
+      "Git - branching, merging, collaborative workflows",
+      "Next.js - full-stack TypeScript web framework",
+      "TypeScript - strongly-typed JavaScript development",
+      "REST APIs - design and consumption",
+      "MCP (Model Context Protocol) - server architecture and implementation",
+      "Docker basics - containerization concepts"
     ],
-    "databases": [
-      "SQL",
-      "PL/SQL",
-      "Oracle Applications",
-      "RDS performance metrics"
+    "ai_ml_and_modern_tools": {
+      "vector_databases": [
+        "Upstash Vector - semantic search in production systems",
+        "Vector embeddings and similarity search concepts"
+      ],
+      "llm_integration": [
+        "LLM orchestration and API integration",
+        "Groq API for fast inference",
+        "Prompt engineering and instruction design",
+        "RAG (Retrieval-Augmented Generation) system design"
+      ],
+      "ai_frameworks": [
+        "Understanding of modern AI/ML architectures",
+        "Integration of AI models into applications",
+        "Data-driven decision making with AI insights"
+      ]
+    },
+    "erp_and_business_systems": [
+      "Oracle Applications (5+ years experience) - HRMS, Payroll, Finance, SCM modules",
+      "Xero accounting software - bookkeeping and financial management",
+      "Enterprise workflow design and optimization",
+      "Business process automation"
     ],
     "soft_skills": [
+      "Stakeholder communication (groups of 20-30, mixed technical/non-technical)",
+      "Data storytelling and business impact communication",
       "Customer education",
-      "Stakeholder communication",
       "Analytical thinking",
-      "Ownership mindset"
+      "Ownership mindset",
+      "Documentation and process clarity",
+      "System design and architecture",
+      "Full-stack development mindset"
     ]
+  },
+
+  "interview_screening": {
+    "screening_questions": {
+      "power_bi_experience": {
+        "question": "How many years of Power BI Analyst experience do you have?",
+        "answer": "Approximately 1 year of hands-on Power BI experience. I have built 4-6 production dashboards with data modeling, DAX calculations, Power Query transformations, and scheduled daily refreshes. Additionally, I have 5+ years of reporting experience in Oracle Applications with scheduled concurrent programs and complex report development."
+      },
+      "data_analysis_experience": {
+        "question": "How many years of Data and Reporting Analyst experience do you have?",
+        "answer": "I have 1 year of hands-on analytics experience through structured self-learning, Power BI dashboard development, and SQL-based analysis. While not in a dedicated BI title historically, I have actively built and validated analytical reports and dashboards. My cloud support background involved metric-driven troubleshooting and translating system performance data into actionable insights for stakeholders."
+      },
+      "excel_proficiency": {
+        "question": "Do you have experience using Microsoft Excel? If yes, at what level?",
+        "answer": "Yes, advanced proficiency. I have built multi-sheet analytical workbooks using PivotTables, Power Query for data transformations, advanced formulas (INDEX/MATCH, nested IFs), data validation logic, and structured reporting. I use Excel extensively for data validation before publishing Power BI dashboards."
+      },
+      "office_products": {
+        "question": "Which Microsoft Office products are you experienced with?",
+        "answer": "Excel (Advanced), Power Query (Advanced), VBA (Basic exposure), and Access (Basic familiarity). I also have extensive experience with Oracle Applications reporting, scheduled concurrent programs, and Oracle reports."
+      },
+      "crm_experience": {
+        "question": "Do you have CRM tool administration or configuration experience?",
+        "answer": "I have not been a dedicated administrator for platforms like Salesforce or Dynamics. However, I have worked extensively with CRM-style customer and ticketing datasets, supporting data validation, reporting accuracy, and scheduled metrics delivery. I identified inconsistencies, ensured reliable metrics for stakeholder decisions, and maintained strict data accuracy standards in operational reporting."
+      },
+      "location_and_availability": {
+        "question": "Are you based in Sydney or willing to relocate? What is your notice period?",
+        "answer": "I am currently based in Sydney and seeking Sydney-based roles. The hybrid arrangement suits my circumstances perfectly. I am not currently employed and am immediately available to start."
+      },
+      "salary_expectations": {
+        "question": "What is your expected annual base salary?",
+        "answer": "$80,000-$90,000 AUD is appropriate for my level of experience and aligns with the role's advertised range."
+      },
+      "work_authorization": {
+        "question": "What is your right to work in Australia?",
+        "answer": "[Candidate would select appropriate option during application based on visa/citizenship status]"
+      }
+    }
   },
 
   "interview_prep": {
@@ -196,6 +407,36 @@
           ],
           "result": "The feature was implemented in a subsequent release, lowering support ticket volume and improving customer satisfaction."
         }
+      },
+      {
+        "question": "Tell me about a time you prioritized data quality and ensured accuracy in reporting.",
+        "answer_star": {
+          "situation": "Monthly stakeholder metrics showed unexpected spikes, raising concerns about data integrity.",
+          "task": "Identify and correct data quality issues to restore stakeholder confidence.",
+          "action": [
+            "Analyzed underlying data and identified inflated metrics caused by duplicate records in source data",
+            "Discovered incorrect aggregation logic in the previous calculation structure",
+            "Corrected the data model and removed duplication at the source level",
+            "Revalidated all totals against source systems before republishing dashboard",
+            "Implemented validation checks to prevent future occurrences"
+          ],
+          "result": "Dashboard metrics now align with source systems. Stakeholders regained confidence in reporting accuracy and made decisions backed by reliable data."
+        }
+      },
+      {
+        "question": "Describe your approach to explaining complex data to non-technical stakeholders.",
+        "answer_star": {
+          "situation": "Needed to present analytics findings to a mixed audience of 20-30 stakeholders (technical and non-technical).",
+          "task": "Communicate complex data and trends in an understandable, actionable format.",
+          "action": [
+            "Focused on business impact and trends rather than technical calculations or methodology",
+            "Used visuals (charts, comparisons, trend lines) to make patterns immediately clear",
+            "Explained what numbers mean for operations and performance, not how formulas were built",
+            "Structured presentation around business questions rather than data structure",
+            "Connected insights to specific decisions stakeholders needed to make"
+          ],
+          "result": "Stakeholders understood the insights, engaged with analysis, and used findings to prioritize operational improvements. Ad hoc analysis requests increased due to confidence in clarity."
+        }
       }
     ],
 
@@ -210,18 +451,73 @@
             "Hands-on data cleaning and visualization during certification projects"
           ]
         }
+      },
+      {
+        "question": "Walk me through your Power BI dashboard development process.",
+        "answer": {
+          "approach": "Structured methodology with quality gates",
+          "steps": [
+            "1. Requirements - gather business metrics, audience needs, refresh cadence",
+            "2. Data sources - identify CSV, SQL, transformation requirements",
+            "3. Data modeling - define relationships, establish dimension/fact structure",
+            "4. DAX development - create calculated measures for trends and comparisons",
+            "5. Design - layout for clarity, use visuals for quick insight",
+            "6. Validation - reconcile against source systems, test refresh schedules",
+            "7. Stakeholder review - confirm metrics align with business definitions",
+            "8. Deploy - set up scheduled refresh, document data lineage"
+          ],
+          "example": "Built analytics dashboard with CSV/SQL sources, product breakdowns, revenue segments, month-over-month trends using DAX metrics with daily scheduled refresh"
+        }
+      },
+      {
+        "question": "How do you ensure data accuracy from source to report?",
+        "answer": {
+          "approach": "Multi-step reconciliation and validation",
+          "process": [
+            "Source-to-report reconciliation - validate report totals match source counts exactly",
+            "Clear metric definitions - standardize calculation (e.g., 'revenue = net sales ex returns')",
+            "Validation checks - automated checks in Power Query or SQL to catch anomalies",
+            "Structured data cleaning - document ETL steps, version control transformations",
+            "Anomaly detection - flag unusual patterns (10x increase, zero values, duplicates)",
+            "Audit trail - maintain version history of dashboard changes and corrections"
+          ]
+        }
+      },
+      {
+        "question": "What experience do you have with scheduled reports and automated refreshes?",
+        "answer": {
+          "powerbi": "Set up scheduled daily refreshes in Power BI for production dashboards from CSV and SQL sources",
+          "oracle_background": "5+ years of oracle reports and BI Publisher reports, concurrent programs, migrations, interface and conversions background in Oracle Applications",
+          "gateways": "Understand Power BI data gateways for on-premises data connectivity and automatic refresh (conceptual knowledge)",
+          "importance": "Understand criticality of reliable scheduling for time-sensitive operational and leadership reporting"
+        }
       }
     ]
   },
 
   "career_transition": {
     "from": "Cloud Support Engineer",
-    "to": "Data Analyst",
-    "evidence": [
-      "Metric-driven troubleshooting experience",
-      "Hands-on data cleaning and visualization",
-      "Formal analytics certifications",
-      "Strong numerical reasoning and pattern recognition"
-    ]
+    "to": "Data Analyst / Junior BI Analyst",
+    "transition_timeline": "1 year of structured learning and hands-on analytics projects",
+    "evidence_of_transition": [
+      "1 year of hands-on Power BI development (4-6 production dashboards)",
+      "Advanced Excel proficiency with Power Query, PivotTables, advanced formulas",
+      "SQL-based data analysis and querying skills",
+      "Data quality ownership and source-to-report reconciliation discipline",
+      "Formal analytics certifications (CompTIA Data+, Azure Data Fundamentals)",
+      "Metric-driven troubleshooting and pattern recognition from cloud support",
+      "Strong numerical reasoning and data interpretation skills",
+      "Experience presenting complex data to 20-30 stakeholder audiences",
+      "Structured self-learning with applied projects and dashboard validation",
+      "5+ years of oracle reports and BI Publisher reports, concurrent programs, migrations, interface and conversions background in Oracle Applications"
+    ],
+    "transferable_skills": {
+      "customer_communication": "Evolved from general support to data storytelling and insight presentation",
+      "troubleshooting_methodology": "Applied to data anomaly detection and root cause analysis in quality issues",
+      "documentation": "Supports metric definitions, ETL documentation, and data lineage clarity",
+      "ownership_mindset": "Applied to data quality responsibility and validation discipline",
+      "reporting_experience": "5+ years with Oracle translates to understanding business reporting requirements"
+    },
+    "readiness_level": "Junior BI/Data Analyst - foundational technical skills solid (Power BI, SQL, Excel), ready for structured growth in Data Analytics / Operations Analytics / Data Engineer and enterprise data governance"
   }
 }
