@@ -75,6 +75,48 @@ export default function InterviewPage() {
     setJobDescription(JOB_POSTINGS[jobKey])
   }
 
+  const generateJobSpecificQuestions = (jobDesc: string): string[] => {
+    // Extract key requirements from job description
+    const lowerDesc = jobDesc.toLowerCase()
+    const questions: string[] = []
+
+    // Check for specific technologies/skills mentioned in the job
+    if (lowerDesc.includes('sql') || lowerDesc.includes('database')) {
+      questions.push('Tell me about your experience with SQL and database management. Can you describe a complex query or database optimization you implemented?')
+    }
+    
+    if (lowerDesc.includes('python') || lowerDesc.includes('scripting') || lowerDesc.includes('bash') || lowerDesc.includes('powershell')) {
+      questions.push('Describe your scripting and automation experience. What scripting languages do you use and what have you automated?')
+    }
+    
+    if (lowerDesc.includes('cloud') || lowerDesc.includes('azure') || lowerDesc.includes('aws') || lowerDesc.includes('snowflake')) {
+      questions.push('What is your experience with cloud platforms and cloud-based data warehouses? Describe a project where you worked with cloud technologies.')
+    }
+    
+    if (lowerDesc.includes('support') || lowerDesc.includes('troubleshoot')) {
+      questions.push('Tell me about a time when you had to troubleshoot a complex technical issue. Walk me through your problem-solving approach.')
+    }
+    
+    if (lowerDesc.includes('pl/sql') || lowerDesc.includes('oracle')) {
+      questions.push('Describe your experience with Oracle PL/SQL stored procedures. What is the most complex procedure you have developed?')
+    }
+    
+    if (lowerDesc.includes('agile') || lowerDesc.includes('project')) {
+      questions.push('How do you manage work in an agile environment? Describe your experience working on projects with multiple stakeholders.')
+    }
+    
+    if (lowerDesc.includes('data') && lowerDesc.includes('analyst')) {
+      questions.push('Describe your approach to data profiling and analysis. How do you ensure data quality and identify data dependencies?')
+    }
+
+    // Always include these general but important questions
+    questions.push('What relevant work experience do you have for this role?')
+    questions.push('Why are you interested in this specific position and company?')
+
+    // Return exactly 5 questions
+    return questions.slice(0, 5)
+  }
+
   const startInterview = async () => {
     if (!jobDescription.trim()) {
       alert('Please enter a job description')
@@ -91,14 +133,8 @@ export default function InterviewPage() {
   }
 
   const conductInterview = async () => {
-    // Predefined interview questions (can be made dynamic)
-    const questions = [
-      'Tell me about your relevant work experience.',
-      'What are your key technical skills?',
-      'Describe a challenging project you worked on.',
-      'What are your career goals?',
-      'Why are you interested in this position?',
-    ]
+    // Generate job-specific questions based on the job description
+    const questions = generateJobSpecificQuestions(jobDescription)
 
     for (let i = 0; i < questions.length; i++) {
       setCurrentQuestion(i + 1)
@@ -171,6 +207,64 @@ export default function InterviewPage() {
     const cultureFitScore = Math.floor(Math.random() * 25) + 65 // 65-90
     const communicationScore = Math.floor(Math.random() * 15) + 80 // 80-95
 
+    // Extract job-specific details
+    const lowerDesc = jobDescription.toLowerCase()
+    const isDataRole = lowerDesc.includes('data analyst')
+    const isSupportRole = lowerDesc.includes('support engineer') || lowerDesc.includes('support specialist')
+    const requiresSQL = lowerDesc.includes('sql')
+    const requiresPython = lowerDesc.includes('python') || lowerDesc.includes('scripting')
+    const requiresCloud = lowerDesc.includes('cloud') || lowerDesc.includes('azure') || lowerDesc.includes('aws')
+    const requiresOracle = lowerDesc.includes('oracle') || lowerDesc.includes('pl/sql')
+    const requiresSnowflake = lowerDesc.includes('snowflake')
+    const requiresDatadog = lowerDesc.includes('datadog')
+    const requiresAgile = lowerDesc.includes('agile')
+
+    // Build job-specific technical skills assessment
+    let technicalSkills = ''
+    if (isDataRole) {
+      technicalSkills = `   • SQL & Data Warehousing: ${decision === 'pass' ? 'Strong - ' + (requiresSnowflake ? 'Snowflake experience demonstrated' : 'Database proficiency shown') : 'Moderate - needs more ' + (requiresSnowflake ? 'Snowflake' : 'database') + ' experience'}\n   • Data Analysis & Profiling: ${decision === 'pass' ? 'Proficient in source-to-target analysis' : 'Basic understanding, needs development'}\n   • BI Tools & Visualization: ${decision === 'pass' ? 'Experienced' : 'Limited exposure'}\n   • ${requiresAgile ? 'Agile/Project Management' : 'Data Governance'}: ${decision === 'pass' ? 'Understands principles' : 'Needs training'}`
+    } else if (isSupportRole) {
+      technicalSkills = `   • Troubleshooting & Root Cause Analysis: ${decision === 'pass' ? 'Strong diagnostic skills' : 'Needs more hands-on experience'}\n   • ${requiresSQL ? 'SQL for Support/Analysis' : 'Technical Skills'}: ${decision === 'pass' ? 'Proficient in queries and optimization' : 'Developing'}\n   • ${requiresPython ? 'Scripting (Python/Bash/PowerShell)' : 'Automation'}: ${decision === 'pass' ? 'Can write automation scripts' : 'Basic scripting only'}\n   • ${requiresOracle ? 'Oracle/PL-SQL' : requiresDatadog ? 'Monitoring Tools (Datadog)' : 'Database'} Knowledge: ${decision === 'pass' ? 'Solid understanding' : 'Needs improvement'}`
+    } else {
+      technicalSkills = `   • Core Technical Skills: ${decision === 'pass' ? 'Strong foundation' : 'Needs development'}\n   • ${requiresCloud ? 'Cloud Platforms (Azure/AWS)' : 'Modern Technologies'}: ${decision === 'pass' ? 'Experienced' : 'Limited'}\n   • Problem-Solving: ${decision === 'pass' ? 'Analytical approach' : 'Needs structure'}\n   • Tool Proficiency: ${decision === 'pass' ? 'Comfortable with required tools' : 'Requires training'}`
+    }
+
+    // Build job-specific skills gaps
+    let skillsGaps = ''
+    if (decision === 'pass') {
+      if (isDataRole) {
+        skillsGaps = '   • Deepen expertise in ' + (requiresSnowflake ? 'advanced Snowflake features (streams, tasks)' : 'cloud data platforms') + '\n   • Consider certification in ' + (requiresSnowflake ? 'SnowPro Core' : 'cloud data (Azure/AWS)') + '\n   • Continue building data governance knowledge\n   • Expand BI tool portfolio'
+      } else if (isSupportRole) {
+        skillsGaps = '   • Gain deeper knowledge in ' + (requiresOracle ? 'Oracle internals and performance tuning' : 'system architecture') + '\n   • Enhance ' + (requiresPython ? 'Python scripting and automation' : 'automation capabilities') + '\n   • Develop ' + (requiresDatadog ? 'advanced Datadog monitoring and alerting' : 'incident management') + ' expertise\n   • Build stronger documentation skills'
+      } else {
+        skillsGaps = '   • Deepen knowledge in role-specific technologies\n   • Consider relevant certifications\n   • Continue building technical leadership\n   • Expand cross-functional collaboration'
+      }
+    } else {
+      if (requiresSQL && requiresOracle) {
+        skillsGaps = '   • CRITICAL: Advanced Oracle PL/SQL proficiency needed\n   • Stored procedures and performance tuning essential\n   • Hands-on project experience with large datasets\n   • Consider Oracle Database certification'
+      } else if (requiresSQL) {
+        skillsGaps = '   • CRITICAL: Advanced SQL/query optimization skills needed\n   • ' + (requiresSnowflake ? 'Snowflake cloud data warehouse experience essential' : 'Database performance tuning required') + '\n   • Hands-on project work with large-scale data\n   • Formal training in database management'
+      } else if (requiresPython) {
+        skillsGaps = '   • CRITICAL: Python scripting proficiency needed\n   • Automation framework experience required\n   • Development best practices training\n   • Version control (Git) skills essential'
+      } else if (requiresCloud) {
+        skillsGaps = '   • CRITICAL: Cloud platform experience (Azure/AWS) needed\n   • Infrastructure as Code understanding required\n   • Cloud architecture patterns training\n   • Hands-on cloud projects essential'
+      } else {
+        skillsGaps = '   • CRITICAL: Core technical skills below requirements\n   • Significant hands-on experience needed\n   • Formal training in key technologies\n   • Project portfolio development required'
+      }
+    }
+
+    // Build job-specific next steps
+    const technicalFocus = requiresSQL && requiresOracle ? 'Oracle PL/SQL and database tuning' : 
+                          requiresSQL && requiresSnowflake ? 'Snowflake and cloud data warehousing' :
+                          requiresPython ? 'Python scripting and automation' :
+                          requiresCloud ? 'cloud platforms and architecture' :
+                          'core technical skills'
+    
+    const toolsFocus = requiresSnowflake ? 'Snowflake, BI platforms' :
+                      requiresDatadog ? 'Datadog, monitoring/logging tools' :
+                      requiresOracle ? 'Oracle Database, PL/SQL Developer' :
+                      'job-specific tools mentioned'
+
     const recommendation = `
 **═══════════════════════════════════════════════**
 📊 FINAL ASSESSMENT REPORT
@@ -182,60 +276,55 @@ ${decision === 'pass' ? '✅ RECOMMENDATION: HIRE' : '❌ RECOMMENDATION: DO NOT
 🎯 Overall Suitability Score: ${score}/100 (${decision === 'pass' ? 'Strong Match' : 'Below Threshold'})
 
 **Key Reasons:**
-${decision === 'pass' ? '• Demonstrated strong technical competency in key areas • Relevant experience aligns well with job requirements • Excellent communication and problem-solving skills • Cultural fit indicators are positive' : '• Technical skills do not fully meet minimum requirements • Experience gaps in critical areas • Additional training would be needed • Consider for junior positions or with skill development plan'}
+${decision === 'pass' ? '• Technical skills align well with job requirements • Demonstrated relevant experience in key areas • Strong problem-solving and communication abilities • Cultural fit indicators positive' : '• Technical skills gap in critical job requirements • Limited hands-on experience in key technologies • Additional training/development needed • Consider for junior role or with development plan'}
 
 **DETAILED BREAKDOWN**
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📈 **Technical Competency:** ${technicalScore}/100
-   • SQL & Database Skills: ${decision === 'pass' ? 'Strong' : 'Moderate'}
-   • Cloud Technologies: ${decision === 'pass' ? 'Proficient' : 'Developing'}
-   • Programming/Scripting: ${decision === 'pass' ? 'Advanced' : 'Basic'}
-   • Problem-solving Approach: ${decision === 'pass' ? 'Analytical & structured' : 'Needs refinement'}
+${technicalSkills}
 
 💼 **Experience Relevance:** ${experienceScore}/100
-   • Years of Experience: Matches job requirements
-   • Industry Background: ${decision === 'pass' ? 'Highly relevant' : 'Partially relevant'}
-   • Project Complexity: ${decision === 'pass' ? 'Handled enterprise-scale projects' : 'Mostly smaller projects'}
-   • Leadership/Collaboration: ${decision === 'pass' ? 'Proven track record' : 'Limited examples'}
+   • Years of Experience: ${decision === 'pass' ? 'Meets job requirements' : 'Below required level'}
+   • Industry Background: ${decision === 'pass' ? 'Directly relevant' : 'Some transferable skills only'}
+   • Project Complexity: ${decision === 'pass' ? 'Handled similar-scale projects' : 'Mostly smaller scope work'}
+   • Tool/Technology Familiarity: ${decision === 'pass' ? 'Knows required tech stack' : 'Limited exposure to required tools'}
 
 🤝 **Cultural Fit Evaluation:** ${cultureFitScore}/100
-   • Communication Style: ${communicationScore >= 85 ? 'Clear & professional' : 'Could be more concise'}
-   • Team Collaboration: ${decision === 'pass' ? 'Strong team player' : 'Prefers independent work'}
-   • Learning Mindset: ${decision === 'pass' ? 'Growth-oriented' : 'Fixed mindset indicators'}
-   • Problem Approach: ${decision === 'pass' ? 'Proactive & innovative' : 'Reactive approach'}
+   • Communication Style: ${communicationScore >= 85 ? 'Clear, professional, technical depth' : 'Adequate but could be more detailed'}
+   • Team Collaboration: ${decision === 'pass' ? 'Strong collaborative examples' : 'Limited team experience shown'}
+   • Learning Mindset: ${decision === 'pass' ? 'Growth-oriented, seeks challenges' : 'Some resistance to change indicators'}
+   • Problem Approach: ${decision === 'pass' ? 'Systematic, analytical, proactive' : 'More reactive than proactive'}
 
 💰 **Salary/Location Alignment:**
-   • Location: Sydney (Hybrid) - ✅ Aligned
-   • Salary Expectations: Within budget range
-   • Start Date: ${decision === 'pass' ? 'Flexible, can start soon' : 'May need notice period'}
+   • Location: Sydney (Hybrid) - ✅ Confirmed aligned
+   • Salary Expectations: ${decision === 'pass' ? 'Within approved budget range' : 'May need negotiation'}
+   • Start Date: ${decision === 'pass' ? 'Available within required timeframe' : 'Extended notice period concern'}
 
 ⚠️ **Risk Factors Identified:**
-${decision === 'pass' ? '   • LOW RISK: Candidate shows strong indicators • Minor gaps can be addressed through onboarding • References should be checked as standard process' : '   • MODERATE-HIGH RISK: Significant skill gaps • May require 3-6 months additional training • Consider if no better candidates available'}
+${decision === 'pass' ? '   • LOW RISK: Strong technical and cultural fit • Minor skill gaps addressable via onboarding • Standard reference checks recommended' : '   • MODERATE-HIGH RISK: Significant skill development needed • 3-6 month ramp-up with training investment • Consider only if limited candidate pool'}
 
 **IMPROVEMENT AREAS**
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎯 **Skills Gaps to Address:**
-   ${decision === 'pass' 
-     ? '• Deepen knowledge in [specific tool mentioned in job] • Consider certification in cloud platforms • Continue building leadership experience'
-     : '• Critical gap: Advanced SQL/PL-SQL proficiency • Need more hands-on cloud platform experience • Strengthen problem-solving methodology • Improve communication clarity'}
+${skillsGaps}
 
 📝 **Missing Profile Information:**
    • Specific metrics/KPIs from recent projects
-   • Detailed certification information
-   • References from previous managers
-   • Portfolio of technical work samples
+   • Relevant certifications for ${isDataRole ? 'data analytics (SnowPro, Azure)' : isSupportRole ? 'technical support/ITIL' : 'this role'}
+   • References from previous managers/colleagues
+   • Portfolio or code samples demonstrating expertise
 
 💡 **Areas for Better Interview Responses:**
-   • Provide more quantifiable achievements (numbers, percentages)
-   • Use STAR method more consistently (Situation-Task-Action-Result)
-   • Include more specific technical details
-   • Demonstrate business impact awareness
+   • Provide more quantifiable achievements (%, $, scale)
+   • Use STAR method consistently (Situation-Task-Action-Result)
+   • Include specific technical implementation details
+   • Demonstrate business impact awareness and metrics
 
 **RECOMMENDED NEXT STEPS**
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${decision === 'pass' ? '\\n✅ **For Hiring Team:** 1. Schedule final round interview with hiring manager 2. Conduct technical assessment/coding challenge 3. Check professional references 4. Prepare offer package within approved range 5. Expected timeline: 1-2 weeks to decision\\n\\n✅ **For Candidate:** 1. Prepare for technical deep-dive session 2. Review specific technologies mentioned in job posting 3. Prepare questions about team structure and projects 4. Have references ready to provide' : '\\n❌ **For Hiring Team:** 1. Send polite rejection email 2. Keep profile on file for junior positions 3. Consider if willing to invest in training program 4. Continue search for candidates with stronger match\\n\\n📚 **For Candidate (if feedback provided):** 1. Upskill in identified gap areas 2. Gain more hands-on project experience 3. Consider relevant certifications 4. Re-apply after 6-12 months of focused development'}
+${decision === 'pass' ? '\\n✅ **For Hiring Team:**\\n   1. Schedule technical assessment focused on ' + technicalFocus + '\\n   2. Conduct behavioral interview with hiring manager\\n   3. Check professional references (2-3)\\n   4. Prepare offer within approved salary band\\n   5. Timeline: 1-2 weeks to final decision\\n\\n✅ **For Candidate:**\\n   1. Prepare for technical deep-dive on ' + technicalFocus + '\\n   2. Review specific tools mentioned: ' + toolsFocus + '\\n   3. Prepare questions about team, projects, growth\\n   4. Have references ready with notice' : '\\n❌ **For Hiring Team:**\\n   1. Send professional rejection with appreciation\\n   2. Keep profile for junior positions if applicable\\n   3. Consider skills development program if potential shown\\n   4. Continue candidate search\\n\\n📚 **For Candidate (Development Roadmap):**\\n   1. Focus on critical skill gaps: ' + technicalFocus + '\\n   2. Build hands-on project portfolio in required areas\\n   3. Consider formal training/bootcamp\\n   4. Gain 6-12 months relevant experience then re-apply'}
 
 **═══════════════════════════════════════════════**
 📅 Report Generated: ${new Date().toLocaleString()}
