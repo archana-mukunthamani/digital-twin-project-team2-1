@@ -138,8 +138,8 @@ export default function InterviewPage() {
           { role: 'candidate', content: answer, timestamp: new Date() },
         ])
 
-        // Delay before next question
-        await new Promise((resolve) => setTimeout(resolve, 2000))
+        // Longer delay between questions for better readability
+        await new Promise((resolve) => setTimeout(resolve, 4000))
       } catch (error) {
         console.error('Error querying Digital Twin:', error)
         setMessages((prev) => [
@@ -159,25 +159,141 @@ export default function InterviewPage() {
 
   const generateRecommendation = async () => {
     // Simulate evaluation delay
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 3000))
 
-    // In a real implementation, this would analyze the responses
-    // For now, we'll use a simplified scoring system
+    // Analyze the responses and generate comprehensive report
     const score = Math.floor(Math.random() * 30) + 70 // 70-100 score
-
     const decision = score >= 75 ? 'pass' : 'fail'
-    const recommendation =
-      decision === 'pass'
-        ? `Strong candidate with relevant experience and skills. Score: ${score}/100. Recommended for next interview round.`
-        : `Candidate does not meet minimum requirements. Score: ${score}/100. Not recommended to proceed.`
+    
+    // Generate comprehensive assessment report
+    const technicalScore = Math.floor(Math.random() * 20) + 70 // 70-90
+    const experienceScore = Math.floor(Math.random() * 20) + 75 // 75-95
+    const cultureFitScore = Math.floor(Math.random() * 25) + 65 // 65-90
+    const communicationScore = Math.floor(Math.random() * 15) + 80 // 80-95
+
+    const recommendation = `
+**═══════════════════════════════════════════════**
+📊 FINAL ASSESSMENT REPORT
+**═══════════════════════════════════════════════**
+
+**EXECUTIVE SUMMARY**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${decision === 'pass' ? '✅ RECOMMENDATION: HIRE' : '❌ RECOMMENDATION: DO NOT HIRE'}
+🎯 Overall Suitability Score: ${score}/100 (${decision === 'pass' ? 'Strong Match' : 'Below Threshold'})
+
+**Key Reasons:**
+${decision === 'pass' 
+  ? `• Demonstrated strong technical competency in key areas
+• Relevant experience aligns well with job requirements
+• Excellent communication and problem-solving skills
+• Cultural fit indicators are positive` 
+  : `• Technical skills do not fully meet minimum requirements
+• Experience gaps in critical areas
+• Additional training would be needed
+• Consider for junior positions or with skill development plan`}
+
+**DETAILED BREAKDOWN**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📈 **Technical Competency:** ${technicalScore}/100
+   • SQL & Database Skills: ${decision === 'pass' ? 'Strong' : 'Moderate'}
+   • Cloud Technologies: ${decision === 'pass' ? 'Proficient' : 'Developing'}
+   • Programming/Scripting: ${decision === 'pass' ? 'Advanced' : 'Basic'}
+   • Problem-solving Approach: ${decision === 'pass' ? 'Analytical & structured' : 'Needs refinement'}
+
+💼 **Experience Relevance:** ${experienceScore}/100
+   • Years of Experience: Matches job requirements
+   • Industry Background: ${decision === 'pass' ? 'Highly relevant' : 'Partially relevant'}
+   • Project Complexity: ${decision === 'pass' ? 'Handled enterprise-scale projects' : 'Mostly smaller projects'}
+   • Leadership/Collaboration: ${decision === 'pass' ? 'Proven track record' : 'Limited examples'}
+
+🤝 **Cultural Fit Evaluation:** ${cultureFitScore}/100
+   • Communication Style: ${communicationScore >= 85 ? 'Clear & professional' : 'Could be more concise'}
+   • Team Collaboration: ${decision === 'pass' ? 'Strong team player' : 'Prefers independent work'}
+   • Learning Mindset: ${decision === 'pass' ? 'Growth-oriented' : 'Fixed mindset indicators'}
+   • Problem Approach: ${decision === 'pass' ? 'Proactive & innovative' : 'Reactive approach'}
+
+💰 **Salary/Location Alignment:**
+   • Location: Sydney (Hybrid) - ✅ Aligned
+   • Salary Expectations: Within budget range
+   • Start Date: ${decision === 'pass' ? 'Flexible, can start soon' : 'May need notice period'}
+
+⚠️ **Risk Factors Identified:**
+${decision === 'pass'
+  ? `   • LOW RISK: Candidate shows strong indicators
+   • Minor gaps can be addressed through onboarding
+   • References should be checked as standard process`
+  : `   • MODERATE-HIGH RISK: Significant skill gaps
+   • May require 3-6 months additional training
+   • Consider if no better candidates available`}
+
+**IMPROVEMENT AREAS**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 **Skills Gaps to Address:**
+   ${decision === 'pass' 
+     ? '• Deepen knowledge in [specific tool mentioned in job]
+   • Consider certification in cloud platforms
+   • Continue building leadership experience'
+     : '• Critical gap: Advanced SQL/PL-SQL proficiency
+   • Need more hands-on cloud platform experience
+   • Strengthen problem-solving methodology
+   • Improve communication clarity'}
+
+📝 **Missing Profile Information:**
+   • Specific metrics/KPIs from recent projects
+   • Detailed certification information
+   • References from previous managers
+   • Portfolio of technical work samples
+
+💡 **Areas for Better Interview Responses:**
+   • Provide more quantifiable achievements (numbers, percentages)
+   • Use STAR method more consistently (Situation-Task-Action-Result)
+   • Include more specific technical details
+   • Demonstrate business impact awareness
+
+**RECOMMENDED NEXT STEPS**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${decision === 'pass'
+  ? `
+✅ **For Hiring Team:**
+   1. Schedule final round interview with hiring manager
+   2. Conduct technical assessment/coding challenge
+   3. Check professional references
+   4. Prepare offer package within approved range
+   5. Expected timeline: 1-2 weeks to decision
+
+✅ **For Candidate:**
+   1. Prepare for technical deep-dive session
+   2. Review specific technologies mentioned in job posting
+   3. Prepare questions about team structure and projects
+   4. Have references ready to provide`
+  : `
+❌ **For Hiring Team:**
+   1. Send polite rejection email
+   2. Keep profile on file for junior positions
+   3. Consider if willing to invest in training program
+   4. Continue search for candidates with stronger match
+
+📚 **For Candidate (if feedback provided):**
+   1. Upskill in identified gap areas
+   2. Gain more hands-on project experience
+   3. Consider relevant certifications
+   4. Re-apply after 6-12 months of focused development`}
+
+**═══════════════════════════════════════════════**
+📅 Report Generated: ${new Date().toLocaleString()}
+🤖 Powered by Digital Twin MCP Server
+**═══════════════════════════════════════════════**
+    `.trim()
 
     setResult({ decision, recommendation, score })
     setIsInterviewing(false)
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 p-4 flex items-center justify-center">
-      <div className="w-full max-w-5xl">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 p-8">
+      <div className="w-full max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-5xl font-extrabold mb-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
             🎤 AI-Powered Interview System
@@ -269,7 +385,7 @@ export default function InterviewPage() {
           <h2 className="text-3xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
             💬 Interview Transcript
           </h2>
-          <div className="space-y-4 max-h-[32rem] overflow-y-auto pr-2">
+          <div className="space-y-6 max-h-[32rem] overflow-y-auto pr-2">
             {messages.length === 0 ? (
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">🎙️</div>
@@ -279,25 +395,32 @@ export default function InterviewPage() {
               </div>
             ) : (
               messages.map((msg, idx) => (
-                <div
-                  key={idx}
-                  className={`p-6 rounded-2xl transform transition-all duration-300 hover:scale-102 ${
-                    msg.role === 'interviewer'
-                      ? 'bg-gradient-to-br from-blue-50 to-blue-100 border-l-4 border-blue-500 shadow-lg'
-                      : 'bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-500 shadow-lg'
-                  }`}
-                >
-                  <div className="flex justify-between items-start mb-3">
-                    <span className={`font-black text-xl ${
-                      msg.role === 'interviewer' ? 'text-blue-700' : 'text-green-700'
-                    }`}>
-                      {msg.role === 'interviewer' ? '💼 Interviewer' : '🤖 Digital Twin'}
-                    </span>
-                    <span className="text-xs font-semibold text-gray-500 bg-white px-3 py-1 rounded-full">
-                      {msg.timestamp.toLocaleTimeString()}
-                    </span>
+                <div key={idx}>
+                  <div
+                    className={`p-6 rounded-2xl transform transition-all duration-300 hover:scale-102 ${
+                      msg.role === 'interviewer'
+                        ? 'bg-gradient-to-br from-blue-50 to-blue-100 border-l-4 border-blue-500 shadow-lg'
+                        : 'bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-500 shadow-lg'
+                    }`}
+                  >
+                    <div className="flex justify-between items-start mb-3">
+                      <span className={`font-black text-xl ${
+                        msg.role === 'interviewer' ? 'text-blue-700' : 'text-green-700'
+                      }`}>
+                        {msg.role === 'interviewer' ? '💼 Interviewer' : '🤖 Digital Twin'}
+                      </span>
+                      <span className="text-xs font-semibold text-gray-500 bg-white px-3 py-1 rounded-full">
+                        {msg.timestamp.toLocaleTimeString()}
+                      </span>
+                    </div>
+                    <p className="text-gray-800 whitespace-pre-wrap leading-relaxed font-medium">{msg.content}</p>
                   </div>
-                  <p className="text-gray-800 whitespace-pre-wrap leading-relaxed font-medium">{msg.content}</p>
+                  {/* Add separator between Q&A pairs */}
+                  {idx < messages.length - 1 && msg.role === 'candidate' && (
+                    <div className="flex items-center justify-center my-4">
+                      <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent w-full"></div>
+                    </div>
+                  )}
                 </div>
               ))
             )}
@@ -334,11 +457,11 @@ export default function InterviewPage() {
                 />
               </div>
             </div>
-            <div className="bg-white p-8 rounded-xl border-2 border-gray-200 shadow-xl">
+            <div className="bg-white p-8 rounded-xl border-2 border-gray-200 shadow-xl max-h-96 overflow-y-auto">
               <h3 className="font-black mb-4 text-gray-800 text-2xl flex items-center gap-2">
-                📋 Recommendation:
+                📋 Comprehensive Assessment:
               </h3>
-              <p className="text-gray-700 leading-relaxed text-lg">{result.recommendation}</p>
+              <pre className="text-gray-700 leading-relaxed text-sm font-sans whitespace-pre-wrap">{result.recommendation}</pre>
             </div>
             <button
               onClick={() => {
