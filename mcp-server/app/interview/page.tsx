@@ -123,6 +123,8 @@ export default function InterviewPage() {
 
       // Get answer from Digital Twin via MCP
       try {
+        console.log(`🎤 Q${i + 1}:`, question)
+        
         const response = await fetch('/api/mcp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -138,6 +140,7 @@ export default function InterviewPage() {
         })
 
         const data = await response.json()
+        console.log(`💬 A${i + 1} (${data.result?.content?.[0]?.text?.substring(0, 100)}...)`)
         const answer = data.result?.content?.[0]?.text || 'Unable to retrieve answer.'
 
         // Add candidate answer
