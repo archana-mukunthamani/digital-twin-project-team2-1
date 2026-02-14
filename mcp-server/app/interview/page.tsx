@@ -48,43 +48,70 @@ export default function InterviewPage() {
   }
 
   const generateJobSpecificQuestions = (jobDesc: string): string[] => {
-    // Extract key requirements from job description
     const lowerDesc = jobDesc.toLowerCase()
     const questions: string[] = []
-
-    // Check for specific technologies/skills mentioned in the job
-    if (lowerDesc.includes('sql') || lowerDesc.includes('database')) {
+    
+    // Score-based keyword detection to identify PRIMARY role focus
+    const keywordScores = {
+      dataAnalyst: (lowerDesc.match(/data analyst|data profiling|bi tool|snowflake|data warehouse/g) || []).length,
+      oracleDB: (lowerDesc.match(/oracle|pl[\/-]?sql/g) || []).length,
+      cloudInfra: (lowerDesc.match(/azure|aws|cloud platform|m365|microsoft 365|sharepoint|azure ad/g) || []).length,
+      scripting: (lowerDesc.match(/python|bash|powershell|scripting|automation/g) || []).length,
+      support: (lowerDesc.match(/application support|technical support|troubleshoot|incident/g) || []).length,
+      sqlGeneral: (lowerDesc.match(/\bsql\b|database management|query optimization/g) || []).length,
+    }
+    
+    // Determine PRIMARY role type based on highest scores
+    const topSkill = Object.entries(keywordScores).sort((a, b) => b[1] - a[1])[0]
+    
+    // Generate questions prioritized by role type
+    if (topSkill[0] === 'cloudInfra' && topSkill[1] > 2) {
+      // Cloud/Azure-focused role (e.g., Orbus Azure M365 role)
+      questions.push('What is your experience with Microsoft Azure and cloud-based applications? Describe a cloud infrastructure project you worked on.')
+      if (lowerDesc.includes('m365') || lowerDesc.includes('microsoft 365') || lowerDesc.includes('sharepoint')) {
+        questions.push('Tell me about your experience with Microsoft 365, SharePoint, or Azure AD administration. What administrative tasks have you performed?')
+      }
+      if (lowerDesc.includes('api') || lowerDesc.includes('restful')) {
+        questions.push('Describe your experience troubleshooting RESTful APIs or web services. Walk me through a complex API issue you resolved.')
+      }
+      questions.push('How do you approach supporting cloud-based applications? What monitoring and diagnostic tools do you use?')
+    } else if (topSkill[0] === 'oracleDB' && topSkill[1] > 2) {
+      // Oracle specialist role
+      questions.push('Describe your experience with Oracle PL/SQL stored procedures. What is the most complex procedure you have developed?')
+      questions.push('Tell me about a time you optimized Oracle database performance. What techniques did you use and what were the results?')
+      questions.push('How do you approach database troubleshooting when queries are running slowly? Walk me through your diagnostic process.')
+    } else if (topSkill[0] === 'dataAnalyst' && topSkill[1] > 2) {
+      // Data Analyst role  
+      questions.push('Describe your approach to data profiling and source-to-target analysis. Can you walk me through a data quality issue you identified and resolved?')
+      questions.push('Tell me about your experience with SQL and cloud data warehouses like Snowflake. Describe a complex analytical query you built.')
+      if (lowerDesc.includes('bi') || lowerDesc.includes('visualization')) {
+        questions.push('What BI tools and data visualization platforms have you used? Describe a dashboard or report you created that drove business insights.')
+      }
+      if (lowerDesc.includes('agile')) {
+        questions.push('Tell me about your experience working in Agile environments on data projects. How do you collaborate with stakeholders?')
+      }
+    } else if (topSkill[0] === 'scripting' && topSkill[1] > 2) {
+      // Scripting/automation focused
+      questions.push('Describe your scripting and automation experience. What languages do you use and what processes have you automated?')
+      questions.push('Tell me about a complex automation script you developed. What was the problem and how did your solution improve efficiency?')
+    } else if (topSkill[0] === 'support' && topSkill[1] > 1) {
+      // Technical support role
+      questions.push('Tell me about a time when you had to troubleshoot a complex technical issue. Walk me through your problem-solving methodology.')
+      if (keywordScores.sqlGeneral > 0) {
+        questions.push('Describe your experience using SQL for support and data analysis. How have you used queries to diagnose issues?')
+      }
+      if (keywordScores.scripting > 0) {
+        questions.push('What scripting skills do you have for automation and support tasks? Provide an example of a script you wrote.')
+      }
+    } else if (keywordScores.sqlGeneral > 1) {
+      // SQL/Database general role
       questions.push('Tell me about your experience with SQL and database management. Can you describe a complex query or database optimization you implemented?')
     }
     
-    if (lowerDesc.includes('python') || lowerDesc.includes('scripting') || lowerDesc.includes('bash') || lowerDesc.includes('powershell')) {
-      questions.push('Describe your scripting and automation experience. What scripting languages do you use and what have you automated?')
-    }
-    
-    if (lowerDesc.includes('cloud') || lowerDesc.includes('azure') || lowerDesc.includes('aws') || lowerDesc.includes('snowflake')) {
-      questions.push('What is your experience with cloud platforms and cloud-based data warehouses? Describe a project where you worked with cloud technologies.')
-    }
-    
-    if (lowerDesc.includes('support') || lowerDesc.includes('troubleshoot')) {
-      questions.push('Tell me about a time when you had to troubleshoot a complex technical issue. Walk me through your problem-solving approach.')
-    }
-    
-    if (lowerDesc.includes('pl/sql') || lowerDesc.includes('oracle')) {
-      questions.push('Describe your experience with Oracle PL/SQL stored procedures. What is the most complex procedure you have developed?')
-    }
-    
-    if (lowerDesc.includes('agile') || lowerDesc.includes('project')) {
-      questions.push('How do you manage work in an agile environment? Describe your experience working on projects with multiple stakeholders.')
-    }
-    
-    if (lowerDesc.includes('data') && lowerDesc.includes('analyst')) {
-      questions.push('Describe your approach to data profiling and analysis. How do you ensure data quality and identify data dependencies?')
-    }
-
-    // Always include these general but important questions
-    questions.push('What relevant work experience do you have for this role?')
+    // Always include 1-2 general questions to reach 5 total
+    questions.push('What relevant work experience do you have that makes you a strong fit for this role?')
     questions.push('Why are you interested in this specific position and company?')
-
+    
     // Return exactly 5 questions
     return questions.slice(0, 5)
   }
