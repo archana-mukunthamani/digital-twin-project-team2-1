@@ -4,10 +4,13 @@ import Groq from 'groq-sdk'
 import { z } from 'zod'
 
 // Environment configuration
-const UPSTASH_VECTOR_REST_URL = process.env.UPSTASH_VECTOR_REST_URL || process.env.test_UPSTASH_VECTOR_REST_URL
-const UPSTASH_VECTOR_REST_TOKEN = process.env.UPSTASH_VECTOR_REST_TOKEN || process.env.test_UPSTASH_VECTOR_REST_TOKEN
-const GROQ_API_KEY = process.env.GROQ_API_KEY
 const DEFAULT_MODEL = "llama-3.1-8b-instant"
+
+const getEnvVars = () => ({
+  UPSTASH_VECTOR_REST_URL: process.env.UPSTASH_VECTOR_REST_URL || process.env.test_UPSTASH_VECTOR_REST_URL,
+  UPSTASH_VECTOR_REST_TOKEN: process.env.UPSTASH_VECTOR_REST_TOKEN || process.env.test_UPSTASH_VECTOR_REST_TOKEN,
+  GROQ_API_KEY: process.env.GROQ_API_KEY,
+})
 
 // Types
 export interface VectorResult {
@@ -31,9 +34,12 @@ export interface RAGResponse {
 // Initialize clients
 let vectorIndex: Index | null = null
 let groqClient: Groq | null = null
+let initError: string | null = null
 
 function initializeVectorDatabase(): Index | null {
   try {
+    const { UPSTASH_VECTOR_REST_URL, UPSTASH_VECTOR_REST_TOKEN } = getEnvVars()
+    
     if (!UPSTASH_VECTOR_REST_URL || !UPSTASH_VECTOR_REST_TOKEN) {
       console.warn('Upstash Vector credentials not found')
       return null
@@ -51,6 +57,8 @@ function initializeVectorDatabase(): Index | null {
 
 function initializeGroqClient(): Groq | null {
   try {
+    const { GROQ_API_KEY } = getEnvVars()
+    
     if (!GROQ_API_KEY) {
       console.warn('GROQ_API_KEY not found - responses will be basic')
       return null
@@ -67,15 +75,25 @@ function initializeGroqClient(): Groq | null {
 
 // Lazy initialization
 function getVectorIndex(): Index | null {
-  if (!vectorIndex) {
-    vectorIndex = initializeVectorDatabase()
+  if (!vectorIndex && !initError) {
+    try {
+      vectorIndex = initializeVectorDatabase()
+    } catch (err) {
+      initError = `Vector DB init failed: ${err}`
+      console.error(initError)
+    }
   }
   return vectorIndex
 }
 
 function getGroqClient(): Groq | null {
-  if (!groqClient) {
-    groqClient = initializeGroqClient()
+  if (!groqClient && !initError) {
+    try {
+      groqClient = initializeGroqClient()
+    } catch (err) {
+      initError = `Groq init failed: ${err}`
+      console.error(initError)
+    }
   }
   return groqClient
 }
