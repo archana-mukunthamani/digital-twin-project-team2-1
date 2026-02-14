@@ -16,6 +16,7 @@ interface JobPostingMetadata {
   company: string
   location: string
   salary: string
+  [key: string]: string | undefined
 }
 
 interface QueryResult {
