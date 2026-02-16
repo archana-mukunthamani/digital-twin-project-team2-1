@@ -143,12 +143,14 @@ git push myfork main
    - Import `archana-mukunthamani/digital-twin-project-team2-1`
    - Select the branch to deploy (usually `dev` or `main`)
 
-3. **Configure Build Settings**:
+3. **Configure Build Settings** (IMPORTANT!):
    - **Framework Preset**: Next.js
-   - **Root Directory**: `mcp-server`
-   - **Build Command**: `pnpm install && pnpm build`
-   - **Output Directory**: `.next`
-   - **Install Command**: `pnpm install`
+   - **Root Directory**: `mcp-server` ⚠️ **MUST BE SET!**
+   - **Build Command**: Leave default or use `pnpm build`
+   - **Output Directory**: Leave default (`.next`)
+   - **Install Command**: Leave default or use `pnpm install`
+   
+   **Critical**: The Root Directory setting tells Vercel where your Next.js app is located!
 
 4. **Add Environment Variables**:
    - Go to "Settings" → "Environment Variables"
@@ -172,19 +174,14 @@ git push myfork main
 The project includes a `vercel.json` configuration file at the root:
 
 ```json
-{
-  "buildCommand": "pnpm install && pnpm build",
-  "outputDirectory": ".next",
-  "installCommand": "pnpm install",
-  "framework": "nextjs",
-  "rootDirectory": "mcp-server"
-}
+{}
 ```
 
-**Key Configuration**:
-- `rootDirectory`: Points to `mcp-server` subdirectory where Next.js app lives
-- `framework`: Set to `nextjs` for proper framework detection
-- Build commands run from within the `rootDirectory` automatically
+**Important**: The `vercel.json` file is intentionally minimal. Vercel configuration (especially Root Directory) **must be set in the Vercel Dashboard** during project setup.
+
+**Why?** The `rootDirectory` property is NOT supported in `vercel.json`. You must configure it through the Vercel UI:
+- Go to Project Settings → General → Root Directory
+- Set it to: `mcp-server`
 
 ### Environment Variables in Vercel
 

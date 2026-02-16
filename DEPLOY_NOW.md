@@ -20,16 +20,17 @@
    - Select `archana-mukunthamani/digital-twin-project-team2-1`
    - Click "Import"
 
-3. **Configure Project**:
+3. **Configure Project** (CRITICAL STEP!):
    ```
    Framework Preset: Next.js
-   Root Directory: mcp-server
-   Build Command: pnpm install && pnpm build
-   Output Directory: .next
-   Install Command: pnpm install
+   Root Directory: mcp-server  ⚠️ MUST SET THIS!
+   Build Command: (leave default)
+   Output Directory: (leave default)
+   Install Command: (leave default)
    ```
    
-   **Note**: The `vercel.json` file already configures these settings automatically!
+   **⚠️ IMPORTANT**: You MUST set "Root Directory" to `mcp-server`!
+   This tells Vercel where your Next.js app is located.
 
 4. **Add Environment Variables** (IMPORTANT!):
    - Click "Environment Variables"
