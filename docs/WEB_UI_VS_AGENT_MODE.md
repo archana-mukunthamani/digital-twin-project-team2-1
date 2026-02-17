@@ -413,6 +413,21 @@ You can always add the Web UI later if you want a public portfolio piece.
 
 ---
 
+## Web UI Implementation
+
+**Detailed Implementation Plan Available:**  
+See [WEB_UI_IMPLEMENTATION_PLAN.md](WEB_UI_IMPLEMENTATION_PLAN.md) for complete architecture, API specifications, component designs, and step-by-step development workflow.
+
+**Summary of Web UI Approach:**
+- **Reuses 100%** of existing `lib/digital-twin.ts` RAG logic
+- **Preserves** Agent Mode (no breaking changes to `/api/mcp`)
+- **Adds** new API routes (`/api/interview/*`) for web-based interviews
+- **Uses** React/Next.js with ShadCN UI components
+- **Can be built** with v0.dev for rapid UI prototyping
+- **Estimated effort:** 2-3 weeks (backend + frontend)
+
+---
+
 ## Testing Your Current Implementation
 
 See detailed testing guide: [VSCODE_AGENT_TESTING_GUIDE.md](VSCODE_AGENT_TESTING_GUIDE.md)

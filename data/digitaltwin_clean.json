@@ -7,7 +7,7 @@
       "Oracle Application Consultant",
       "Data-Focused IT Professional"
     ],
-    "career_summary": "Data-focused IT professional with 8+ years of experience across enterprise applications, cloud database support, and analytics-driven roles. Strong background in SQL, Oracle and PostgreSQL databases, data migration, reporting, and stakeholder engagement. Hands-on experience supporting AWS RDS and Aurora environments, resolving data quality and performance issues, and translating business requirements into technical solutions. Recent self-learning in data analytics with 8-9 months of intensive project work including AI-powered data pipelines and digital twin development. Certified in CompTIA Data+ and Microsoft Azure Data Fundamentals.",
+    "career_summary": "Data-focused IT professional with 8+ years of experience across enterprise applications, cloud database support, and analytics-driven roles. Strong background in SQL, Oracle and PostgreSQL databases, data migration, reporting, and stakeholder engagement. Hands-on experience supporting AWS RDS and Aurora environments, resolving data quality and performance issues, and translating business requirements into technical solutions. Currently undergoing AI Data Analyst internship with AusBiz Consulting (8-9 months) working on intensive project work including AI-powered data pipelines and digital twin development. Certified in CompTIA Data+ and Microsoft Azure Data Fundamentals.",
     "location_preference": ["Sydney, Australia"],
     "current_status": "Currently unemployed - Actively seeking opportunities",
     "job_target": "Data Analyst / Support Engineer / ERP Consultant",
@@ -153,6 +153,8 @@
     {
       "project_name": "AI-Powered Food Knowledge Assistant (Food RAG)",
       "period": "Dec 2025 – Jan 2026",
+      "organization": "AusBiz Consulting (Internship)",
+      "role": "AI Data Analyst Intern",
       "description": "Built a data retrieval and analysis pipeline to generate structured insights from curated datasets",
       "key_accomplishments": [
         "Designed and implemented data retrieval and analysis pipeline for knowledge extraction",
@@ -164,8 +166,10 @@
       "skills_demonstrated": ["Data pipeline development", "Data validation", "Web interface design", "RAG implementation", "Python scripting"]
     },
     {
-      "project_name": "Building My Digital Twin (Self-Learning Project)",
-      "period": "Jan 2026 – Feb 2026",
+      "project_name": "Building My Digital Twin",
+      "period": "Jan 2026 – present (ongoing)",
+      "organization": "AusBiz Consulting (Internship)",
+      "role": "AI Data Analyst Intern",
       "description": "Comprehensive professional profile development with RAG-powered MCP server for interview preparation and career assessment",
       "key_accomplishments": [
         "Designed and implemented a digital twin system to capture comprehensive professional profile",
@@ -183,16 +187,15 @@
 
   "skills": {
     "power_bi": {
-      "proficiency": "Intermediate-Advanced (1 year hands-on)",
-      "dashboards_built": "4-6 production dashboards",
+      "proficiency": "Basic (self-learning only, no professional hands-on experience)",
+      "dashboards_built": "Basic practice dashboards as part of self-learning project work",
       "key_capabilities": [
-        "Data modeling with relationships",
-        "DAX calculated measures and metrics",
-        "Scheduled daily refreshes from multiple sources",
-        "Power Query for data transformation",
-        "Trend analysis and month-over-month comparisons"
+        "Basic understanding of data visualization concepts",
+        "Introductory knowledge of Power Query for data transformation",
+        "Familiarity with basic dashboard layout and design",
+        "Conceptual understanding of data modeling and relationships"
       ],
-      "example": "Analytics dashboard tracking product purchases, category distribution, sales trends, revenue by segment with scheduled daily refresh from CSV/SQL sources"
+      "note": "Limited practical experience - built simple dashboards during self-study to understand core concepts. No production or professional experience."
     },
     "excel": {
       "proficiency": "Advanced",
@@ -245,7 +248,7 @@
           "Digital Twin MCP Server (vector database integration, semantic search)",
           "Data processing scripts for vector embedding"
         ],
-        "note": "Self-taught through recent projects. Practical proficiency in application development and scripting."
+        "note": "Internship projects completed under the guidance of AusBiz Consulting as part of AI Data Analyst internship program. Practical proficiency in application development and scripting developed through structured project work."
       },
       "shell_scripting": {
         "proficiency": "Intermediate",
@@ -291,7 +294,7 @@
       "Business process automation"
     ],
     "soft_skills": [
-      "Stakeholder communication (groups of 20-30, mixed technical/non-technical)",
+      "Stakeholder communication in WAR room during critical production issues",
       "Data storytelling and business impact communication",
       "Customer education",
       "Analytical thinking",
@@ -306,15 +309,15 @@
     "screening_questions": {
       "power_bi_experience": {
         "question": "How many years of Power BI Analyst experience do you have?",
-        "answer": "Approximately 1 year of hands-on Power BI experience. I have built 4-6 production dashboards with data modeling, DAX calculations, Power Query transformations, and scheduled daily refreshes. Additionally, I have 5+ years of reporting experience in Oracle Applications with scheduled concurrent programs and complex report development."
+        "answer": "I have basic Power BI knowledge from self-learning only, with no professional or production experience. I built simple practice dashboards as part of my self-study to understand core concepts. However, I have 5+ years of professional reporting experience in Oracle Applications with scheduled concurrent programs, complex report development, and BI Publisher reports, which demonstrates my strong foundation in data reporting and analytics."
       },
       "data_analysis_experience": {
         "question": "How many years of Data and Reporting Analyst experience do you have?",
-        "answer": "I have 1 year of hands-on analytics experience through structured self-learning, Power BI dashboard development, and SQL-based analysis. While not in a dedicated BI title historically, I have actively built and validated analytical reports and dashboards. My cloud support background involved metric-driven troubleshooting and translating system performance data into actionable insights for stakeholders."
+        "answer": "I have approximately 1 year of structured self-learning in data analytics with SQL-based analysis and Excel proficiency. While I haven't held a dedicated BI analyst title, I have 5+ years of professional reporting experience with Oracle Applications (BI Publisher, concurrent programs) and 2.7 years at AWS where my role involved metric-driven troubleshooting, analyzing CloudWatch performance data, and translating technical insights into actionable recommendations for stakeholders."
       },
       "excel_proficiency": {
         "question": "Do you have experience using Microsoft Excel? If yes, at what level?",
-        "answer": "Yes, advanced proficiency. I have built multi-sheet analytical workbooks using PivotTables, Power Query for data transformations, advanced formulas (INDEX/MATCH, nested IFs), data validation logic, and structured reporting. I use Excel extensively for data validation before publishing Power BI dashboards."
+        "answer": "Yes, advanced proficiency. I have built multi-sheet analytical workbooks using PivotTables, Power Query for data transformations, advanced formulas (INDEX/MATCH, nested IFs), data validation logic, and structured reporting. Excel has been my primary tool for data analysis and validation throughout my career."
       },
       "office_products": {
         "question": "Which Microsoft Office products are you experienced with?",
@@ -344,7 +347,7 @@
       "handling_skill_gaps": {
         "when_to_use": "When asked about tools, technologies, or experiences not in your background",
         "approach": "Acknowledge the gap honestly, then pivot to demonstrate learning agility and growth mindset",
-        "template_response": "I don't currently have direct experience with [specific skill/tool/technology]. However, as you can see from my past learning experiences and career transitions, I've always found it challenging and enthusiastic to shift my career direction and upskill myself. For example, I successfully transitioned from Oracle Applications to AWS cloud support, and more recently invested a year in structured data analytics learning including Power BI, Python, and vector databases. Gaining this additional skill or getting to work on this new tool would be definitely challenging as well as encouraging to me. I'm confident in my ability to learn quickly and apply new knowledge effectively.",
+        "template_response": "I don't currently have direct experience with [specific skill/tool/technology]. However, as you can see from my past learning experiences and career transitions, I've always found it challenging and enthusiastic to shift my career direction and upskill myself. For example, I successfully transitioned from Oracle Applications to AWS cloud support, and more recently completed an AI Data Analyst internship with AusBiz Consulting where I worked on structured data analytics projects including Python, RAG systems, and vector databases. Gaining this additional skill or getting to work on this new tool would be definitely challenging as well as encouraging to me. I'm confident in my ability to learn quickly and apply new knowledge effectively.",
         "key_points_to_emphasize": [
           "Honest acknowledgment - builds trust and credibility",
           "Evidence of learning agility - cite specific examples of past transitions",
@@ -353,8 +356,8 @@
           "Confidence in transferable skills - show how you approach learning"
         ],
         "examples": {
-          "tableau": "I don't currently have Tableau experience, though I'm proficient in Power BI with similar data visualization principles. As you can see from my background, I successfully transitioned from Oracle Applications to AWS cloud support, and more recently invested a year mastering Power BI, DAX, and data modeling. Learning Tableau would leverage my existing BI foundation while expanding my toolset. I'm enthusiastic about the challenge and confident I can become productive quickly.",
-          "machine_learning": "I don't have formal machine learning experience, but I've worked with RAG systems, vector databases, and LLM integration in my recent Digital Twin project. As demonstrated by my career transitions and self-learning track record, I find it challenging and encouraging to expand into new technical areas. Gaining ML skills would complement my data analysis background and align perfectly with my interest in AI-driven analytics.",
+          "tableau": "I don't currently have Tableau experience, though I have basic Power BI knowledge and understand data visualization principles. As you can see from my background, I successfully transitioned from Oracle Applications to AWS cloud support, and more recently completed an AI Data Analyst internship with AusBiz Consulting where I worked on data analysis and visualization projects. Learning Tableau would leverage my analytical foundation while expanding my toolset. I'm enthusiastic about the challenge and confident I can become productive quickly.",
+          "machine_learning": "I don't have formal machine learning experience, but I've worked with RAG systems, vector databases, and LLM integration during my AI Data Analyst internship with AusBiz Consulting where I built a Digital Twin project. As demonstrated by my career transitions and practical project experience, I find it challenging and encouraging to expand into new technical areas. Gaining ML skills would complement my data analysis background and align perfectly with my interest in AI-driven analytics.",
           "salesforce": "I haven't administered Salesforce directly, though I have extensive experience with CRM-style datasets, data validation, and reporting accuracy. My 5+ years with Oracle Applications and recent AWS support work show my ability to quickly learn enterprise platforms. I'm genuinely enthusiastic about expanding into Salesforce administration and confident my ERP background provides a strong foundation."
         }
       }
@@ -445,8 +448,8 @@
       {
         "question": "Describe your approach to explaining complex data to non-technical stakeholders.",
         "answer_star": {
-          "situation": "Needed to present analytics findings to a mixed audience of 20-30 stakeholders (technical and non-technical).",
-          "task": "Communicate complex data and trends in an understandable, actionable format.",
+          "situation": "During critical production outages, needed to present technical performance data and root cause analysis to stakeholder audiences in WAR room (mix of technical and non-technical participants).",
+          "task": "Communicate complex technical data, performance metrics, and incident trends in an understandable, actionable format under time pressure.",
           "action": [
             "Focused on business impact and trends rather than technical calculations or methodology",
             "Used visuals (charts, comparisons, trend lines) to make patterns immediately clear",
@@ -502,20 +505,20 @@
         }
       },
       {
-        "question": "Walk me through your Power BI dashboard development process.",
+        "question": "Walk me through your approach to building analytical reports and dashboards.",
         "answer": {
-          "approach": "Structured methodology with quality gates",
+          "approach": "Structured methodology with quality gates - developed through Oracle reporting and self-learning",
           "steps": [
             "1. Requirements - gather business metrics, audience needs, refresh cadence",
-            "2. Data sources - identify CSV, SQL, transformation requirements",
-            "3. Data modeling - define relationships, establish dimension/fact structure",
-            "4. DAX development - create calculated measures for trends and comparisons",
-            "5. Design - layout for clarity, use visuals for quick insight",
-            "6. Validation - reconcile against source systems, test refresh schedules",
+            "2. Data sources - identify source systems, data quality, transformation requirements",
+            "3. Data modeling - understand relationships and data structure",
+            "4. Development - create calculated measures and metrics (Oracle BI Publisher formulas, SQL aggregations)",
+            "5. Design - layout for clarity, use appropriate visualizations for insights",
+            "6. Validation - reconcile against source systems, test accuracy",
             "7. Stakeholder review - confirm metrics align with business definitions",
-            "8. Deploy - set up scheduled refresh, document data lineage"
+            "8. Deploy - document data lineage and calculation logic"
           ],
-          "example": "Built analytics dashboard with CSV/SQL sources, product breakdowns, revenue segments, month-over-month trends using DAX metrics with daily scheduled refresh"
+          "experience": "5+ years developing Oracle BI Publisher reports and scheduled concurrent programs with complex business logic, SQL queries, and parameter-driven reporting. Recently expanded knowledge through self-learning in modern BI tools."
         }
       },
       {
@@ -535,10 +538,9 @@
       {
         "question": "What experience do you have with scheduled reports and automated refreshes?",
         "answer": {
-          "powerbi": "Set up scheduled daily refreshes in Power BI for production dashboards from CSV and SQL sources",
-          "oracle_background": "5+ years of oracle reports and BI Publisher reports, concurrent programs, migrations, interface and conversions background in Oracle Applications",
-          "gateways": "Understand Power BI data gateways for on-premises data connectivity and automatic refresh (conceptual knowledge)",
-          "importance": "Understand criticality of reliable scheduling for time-sensitive operational and leadership reporting"
+          "professional_experience": "5+ years of professional experience with Oracle BI Publisher reports and concurrent programs - scheduling automated reports, managing report parameters, ensuring reliable delivery for operational and leadership stakeholders",
+          "technical_knowledge": "Understand modern BI scheduling concepts including data refresh cadence, gateway connectivity, and automated distribution (conceptual knowledge from self-learning)",
+          "business_understanding": "Deep understanding of the criticality of reliable scheduling for time-sensitive operational and leadership reporting from years of production support"
         }
       }
     ]
@@ -548,16 +550,18 @@
     "from": "Cloud Support Engineer (last role: Aug 2022 - Mar 2025)",
     "to": "Data Analyst / Junior BI Analyst",
     "current_employment_status": "NOT CURRENTLY EMPLOYED - Unemployed since March 2025, actively seeking opportunities",
-    "transition_timeline": "1 year of structured learning and hands-on analytics projects (Mar 2025 - present)",
+    "transition_timeline": "1 year of structured learning and analytics projects including AI Data Analyst internship with AusBiz Consulting (Mar 2025 - present)",
     "evidence_of_transition": [
-      "1 year of hands-on Power BI development (4-6 production dashboards)",
+      "Currently undergoing AI Data Analyst internship with AusBiz Consulting (Dec 2025 - present)",
+      "Built production-level AI/ML projects including RAG systems and vector database integration",
+      "Basic Power BI knowledge from self-learning (no professional experience)",
       "Advanced Excel proficiency with Power Query, PivotTables, advanced formulas",
       "SQL-based data analysis and querying skills",
       "Data quality ownership and source-to-report reconciliation discipline",
       "Formal analytics certifications (CompTIA Data+, Azure Data Fundamentals)",
       "Metric-driven troubleshooting and pattern recognition from cloud support",
       "Strong numerical reasoning and data interpretation skills",
-      "Experience presenting complex data to 20-30 stakeholder audiences",
+      "Experience presenting complex data to stakeholder audiences in WAR room during critical production issues",
       "Structured self-learning with applied projects and dashboard validation",
       "5+ years of oracle reports and BI Publisher reports, concurrent programs, migrations, interface and conversions background in Oracle Applications"
     ],
@@ -568,6 +572,6 @@
       "ownership_mindset": "Applied to data quality responsibility and validation discipline",
       "reporting_experience": "5+ years with Oracle translates to understanding business reporting requirements"
     },
-    "readiness_assessment": "READY FOR Junior BI/Data Analyst roles - foundational technical skills solid (Power BI, SQL, Excel), prepared for structured growth in Data Analytics / Operations Analytics / Data Engineer and enterprise data governance. NOT currently employed in this capacity."
+    "readiness_assessment": "READY FOR Junior BI/Data Analyst and AI-focused data roles - 5+ years Oracle BI Publisher and reporting experience, advanced Excel and SQL skills, AWS metrics analysis background. Currently undergoing AI Data Analyst internship with AusBiz Consulting (Dec 2025 - present) working on RAG systems, vector databases, and Python-based data pipelines. Basic modern BI tool knowledge (Power BI) from self-learning. Well-positioned for roles emphasizing SQL, Excel, data analysis, and emerging AI/ML technologies with opportunity to develop modern BI tool proficiency on the job. NOT currently employed in this capacity."
   }
 }

@@ -43,6 +43,8 @@ digital-twin-project-team2/
 │   ├── VECTOR_IMPLEMENTATION_SUMMARY.md
 │   ├── VSCODE_AGENT_TESTING_GUIDE.md  # ⭐ Testing guide
 │   ├── QUICK_TEST_CHECKLIST.md    # Quick reference
+│   ├── UI_IMPLEMENTATION_SUMMARY.md   # ✨ Web UI documentation
+│   ├── WEB_UI_IMPLEMENTATION_PLAN.md  # Future interview mode
 │   └── WEB_UI_VS_AGENT_MODE.md    # Implementation comparison
 ├── data/                          # Profile data
 │   ├── digitaltwin.json           # Professional profile
@@ -62,7 +64,29 @@ digital-twin-project-team2/
 └── requirements.txt               # Python dependencies
 ```
 
-### Quick Start - Testing in VS Code Agent Mode
+### Quick Start Options
+
+#### Option 1: Web UI (Interactive Browser Interface)
+
+**Status:** ✅ Implemented locally | ⏳ Not yet deployed to Vercel
+
+**Local Testing:**
+1. Navigate to mcp-server directory:
+   ```powershell
+   cd mcp-server
+   ```
+2. Start development server:
+   ```powershell
+   pnpm dev
+   ```
+3. Open browser: `http://localhost:3000`
+4. Use the interactive UI to query your digital twin
+
+**Documentation**: See [docs/UI_IMPLEMENTATION_SUMMARY.md](docs/UI_IMPLEMENTATION_SUMMARY.md)
+
+---
+
+#### Option 2: VS Code Agent Mode (Developer Workflow)
 
 **Prerequisites**:
 - VS Code Insiders with GitHub Copilot
