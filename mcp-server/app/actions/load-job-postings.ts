@@ -13,8 +13,17 @@ export interface JobPosting {
 
 export async function loadAllJobPostings(): Promise<JobPosting[]> {
   try {
-    // Path to job-postings directory (one level up from mcp-server)
-    const jobPostingsPath = join(process.cwd(), '..', 'job-postings')
+    // Try multiple possible paths for job-postings directory
+    // 1. For Vercel/production: job-postings in project root when mcp-server is root
+    // 2. For local dev: one level up from mcp-server
+    let jobPostingsPath = join(process.cwd(), '..', 'job-postings')
+    
+    try {
+      await readdir(jobPostingsPath)
+    } catch {
+      // If first path fails, try project root directly
+      jobPostingsPath = join(process.cwd(), 'job-postings')
+    }
     
     // Read all markdown files from the directory
     const files = await readdir(jobPostingsPath)
