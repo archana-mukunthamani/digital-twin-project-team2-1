@@ -23,16 +23,19 @@
     {
       "degree": "Bachelor of Information Technology",
       "institution": "Madras University",
+      "location": "Chennai, Tamil Nadu, India",
       "year": 2004
     },
     {
       "degree": "Post Graduate Diploma in Human Resources Management",
       "institution": "Welingkar Institute",
+      "location": "Mumbai, India",
       "year": 2013
     },
     {
       "degree": "Certificate IV in Accounting and Bookkeeping",
       "institution": "Monarch Institute",
+      "location": "Sydney, Australia",
       "year": 2021
     }
   ],
@@ -40,14 +43,17 @@
   "certifications": [
     {
       "name": "CompTIA Data+",
+      "location": "Online",
       "year": 2025
     },
     {
       "name": "Microsoft Certified: Azure Data Fundamentals",
+      "location": "Online",
       "year": 2025
     },
     {
       "name": "AWS Certified Cloud Practitioner",
+      "location": "Online",
       "year": 2021
     }
   ],
@@ -140,6 +146,7 @@
   "volunteer_experience": [
     {
       "organization": "Family Business",
+      "location": "Chennai, Tamil Nadu, India",
       "role": "IT & Administrative Support",
       "responsibilities": [
         "Basic website management and maintenance",
@@ -154,6 +161,7 @@
       "project_name": "AI-Powered Food Knowledge Assistant (Food RAG)",
       "period": "Dec 2025 – Jan 2026",
       "organization": "AusBiz Consulting (Internship)",
+      "location": "Sydney, Australia (Remote)",
       "role": "AI Data Analyst Intern",
       "description": "Built a data retrieval and analysis pipeline to generate structured insights from curated datasets",
       "key_accomplishments": [
@@ -169,6 +177,7 @@
       "project_name": "Building My Digital Twin",
       "period": "Jan 2026 – present (ongoing)",
       "organization": "AusBiz Consulting (Internship)",
+      "location": "Sydney, Australia (Remote)",
       "role": "AI Data Analyst Intern",
       "description": "Comprehensive professional profile development with RAG-powered MCP server for interview preparation and career assessment",
       "key_accomplishments": [
@@ -338,6 +347,10 @@
       "work_authorization": {
         "question": "What is your right to work in Australia?",
         "answer": "[Candidate would select appropriate option during application based on visa/citizenship status]"
+      },
+      "recent_projects": {
+        "question": "What projects have you worked on recently?",
+        "answer": "Recently, I've been working on two AI-driven projects as part of an AI Data Analyst internship program with an AWS consulting team, where I focused on building practical, production-oriented solutions. The first project involved building a personal AI assistant for food knowledge, using Retrieval-Augmented Generation (RAG). I initially developed the system locally so it could learn from my own documents while maintaining full privacy. The assistant can ingest custom knowledge and provide context-aware responses, essentially acting as a private AI brain. From a technical perspective, I used the Llama 3.2 model for language generation and MSBAI embeddings for semantic text representation. The pipeline converts documents into embeddings, stores them in a vector database, and retrieves relevant context before generating responses. I ran the system locally using Ollama and implemented a full RAG pipeline including data preparation, embedding generation, vector storage, and contextual response generation. In the next phase, I migrated the solution to a cloud-native architecture to improve scalability, speed, and accessibility. I replaced the local ChromaDB vector store with Upstash Vector, a serverless vector database with semantic search capabilities, and upgraded the inference engine from Ollama to Groq-powered LLMs for ultra-fast response times and low latency. This involved redesigning the architecture, updating database clients, validating retrieval accuracy, and reconfiguring model integrations. To make the solution accessible through a browser, I am currently wrapping the backend pipeline into a web application. I am converting the Python-based workflow into a Next.js web app, using v0.dev to generate a production-ready frontend interface. In parallel, I am developing a second project: an AI-powered Digital Twin of myself designed to assist with job interview preparation and career development. This system uses RAG and NLP techniques to retrieve verified information from my career history and generate accurate, context-aware interview responses. The AI agent can ingest a job description, simulate interview questions, and generate a comprehensive evaluation report. The first phase runs inside VS Code Agent Mode for full interview simulation, while the second phase includes a web interface for structured practice sessions. My next phase is to enable a complete, interactive interview simulation directly within the web UI. These projects have strengthened my skills in AI system design, RAG pipelines, vector databases, cloud deployment, and building practical tools that solve real-world problems."
       }
     }
   },
